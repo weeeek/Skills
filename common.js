@@ -20,6 +20,7 @@ function newGuid() {
     return guid;
 }
 
+//取图片流
 function get64Code(baseCode) {
     return baseCode.substring(baseCode.indexOf('base64,')+7);
 }
@@ -123,6 +124,12 @@ function differenceSet(a, b) {
             result.push(a[i]);
     }
     return result;
+}
+
+//合并数组
+function uniqueArr(arr){
+    //Set数据结构，它类似于数组，其成员的值都是唯一的
+    return Array.from(new Set(arr)); // 利用Array.from将Set结构转换成数组
 }
 
 //https://www.zhihu.com/question/54822257
