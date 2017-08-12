@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>《天黑日记》钢琴键位练习</title>
+    <style type="text/css">
+        @keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @-moz-keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .fall {
+            height: calc(100% - 300px);
+            width: 100%;
+            background: #002B36;
+            filter: blur(20px);
+        }
+
+        .audio {
+            width: 100%;
+            height: 150px;
+            background: white;
+        }
+
+            .audio .audio-img {
+                border-radius: 50%;
+                width: 110px;
+                height: 110px;
+                background-image: url('https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2054387013,1636163227&fm=58');
+                background-repeat: no-repeat;
+                background-size: cover;
+                float: left;
+            }
+
+        .audio-img.playing {
+            animation: rotate linear 10s infinite;
+        }
+        .audio .audio-info {
+            float: left;
+            margin-left: 110px;
+            width: calc(100% - 110px);
+        }
+
+
+        .audio audio {
+            width: 100%;
+            height: 100%;
+        }
+
+        .piano {
+            height: 150px;
+            width: 100%;
+            position: relative;
+        }
+
+        .keys-white {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, .5) inset;
+        }
+
+        .key-white {
+            height: 100%;
+            width: calc(100% / 52);
+            border: 1px solid #666;
+            float: left;
+            border-bottom: 2px solid #929292;
+        }
+
+        .key-black {
+            width: 66%;
+            height: 100px;
+            background: black;
+            transform: translateX(-50%);
+            box-shadow: 0px -2px 2px rgba(255,255,255,0.5) inset,1px -8px 8px rgba(255,255,255,0.5) inset;
+            -moz-box-shadow: 0px -2px 2px rgba(255,255,255,0.5) inset,1px -8px 5px rgba(255,255,255,0.5) inset;
+            border-bottom: 1px solid #929292;
+        }
+
+            .key-black.press, .green {
+                background: #A1DE29;
+            }
+
+        .key-white.press, .blue {
+            background: #40A8DD;
+        }
+    </style>
+</head>
+<body>
+    <div class="audio">
+        <div class="audio-img">
+
+        </div>
+        <div class="audio-info">
+            <audio controls="" src="张语格 - 天黑日记.mp3"></audio>
+        </div>
+    </div>
+    <div class="fall">
+    </div>
+    <!--钢琴键88个-->
+    <div class="piano">
+        <div class="keys-white">
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white">
+                <div class="key-black"></div>
+            </div>
+            <div class="key-white"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+
+    </script>
+</body>
+</html>
