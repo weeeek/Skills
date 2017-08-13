@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>《天黑日记》钢琴键位练习</title>
+    <title>《天黑日记》钢琴键位</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" />
     <style type="text/css">
         @keyframes rotate {
             0% {
@@ -45,41 +46,101 @@
         }
 
         .fall {
-            height: calc(100% - 300px);
+            height: calc(100% - 440px);
             width: 100%;
             background: #002B36;
             filter: blur(20px);
+            clear: both;
         }
 
         .audio {
-            width: 100%;
-            height: 150px;
+            width: 1366px;
             background: white;
+            margin: 0 auto;
+            padding-top: 15px;
         }
 
-            .audio .audio-img {
-                border-radius: 50%;
-                width: 110px;
-                height: 110px;
-                background-image: url('https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2054387013,1636163227&fm=58');
-                background-repeat: no-repeat;
-                background-size: cover;
-                float: left;
-            }
+        .audio-img, .audio-music {
+            float: left;
+        }
 
-        .audio-img.playing {
+        .audio-img {
+            position: relative;
+            width: 150px;
+        }
+
+        .audio-info {
+            padding-bottom: 25px;
+        }
+
+        .audio .rotate-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background-image: url('https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2054387013,1636163227&fm=58');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .icon {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border: 2px solid white;
+            transform: translate(100%,100%);
+            background: rgba(0,0,0,.5);
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+        }
+
+        .glyphicon {
+            color: white;
+            line-height: 46px;
+            height: 46px;
+            width: 46px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .glyphicon-pause, .play .glyphicon-play {
+            display: none;
+        }
+
+        .play .glyphicon-pause {
+            display: block !important;
+        }
+
+        .playing .rotate-img {
             animation: rotate linear 10s infinite;
         }
-        .audio .audio-info {
-            float: left;
-            margin-left: 110px;
-            width: calc(100% - 110px);
+
+        .pause .rotate-img {
+            animation-play-state: paused;
+        }
+
+        .audio .audio-music {
+            width: calc(100% - 175px);
+            margin-left: 25px;
         }
 
 
         .audio audio {
             width: 100%;
             height: 100%;
+            visibility: hidden;
+        }
+
+        .audio-lyrics {
+            height: 240px;
+            overflow: hidden;
+            width: 250px;
+            float: left;
+            padding-bottom: 20px;
+        }
+
+        .audio-operns {
+            width: calc(100% - 250px);
         }
 
         .piano {
@@ -88,7 +149,7 @@
             position: relative;
         }
 
-        .keys-white {
+        .keys-white, .keys-black {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -96,7 +157,14 @@
             left: 0;
             right: 0;
             bottom: 0;
+        }
+
+        .keys-white {
             box-shadow: 0 10px 10px rgba(0, 0, 0, .5) inset;
+        }
+
+        .keys-black {
+            height: 100px;
         }
 
         .key-white {
@@ -105,34 +173,129 @@
             border: 1px solid #666;
             float: left;
             border-bottom: 2px solid #929292;
+            position: relative;
+        }
+
+        .key-c::after {
+            content: attr(key);
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
         }
 
         .key-black {
-            width: 66%;
+            width: calc(100% / 52);
             height: 100px;
-            background: black;
-            transform: translateX(-50%);
-            box-shadow: 0px -2px 2px rgba(255,255,255,0.5) inset,1px -8px 8px rgba(255,255,255,0.5) inset;
-            -moz-box-shadow: 0px -2px 2px rgba(255,255,255,0.5) inset,1px -8px 5px rgba(255,255,255,0.5) inset;
-            border-bottom: 1px solid #929292;
+            float: left;
         }
 
-            .key-black.press, .green {
-                background: #A1DE29;
+            .key-black button {
+                background: black;
+                transform: translateX(-50%);
+                box-shadow: 0px -2px 2px rgba(255,255,255,0.5) inset,1px -8px 8px rgba(255,255,255,0.5) inset;
+                -moz-box-shadow: 0px -2px 2px rgba(255,255,255,0.5) inset,1px -8px 5px rgba(255,255,255,0.5) inset;
+                border-bottom: 1px solid #929292;
+                border-top: 0;
+                border-left: 1px solid #555;
+                border-right: 1px solid #555;
+                height: 100%;
+                width: 70%;
             }
 
-        .key-white.press, .blue {
-            background: #40A8DD;
+        /*.key-black:nth-child(5n+1) {
+                margin-right: calc(100% / 52);
+            }
+
+            .key-black:nth-child(5n+3) {
+                margin-right: calc(100% / 52);
+            }*/
+
+        .green {
+            background: #A1DE29 !important;
         }
+
+        .blue {
+            background: #40A8DD !important;
+        }
+
+        .lrc-sentence.current {
+            color: #91CCEA;
+        }
+        /*白键长14.4CM宽2.4CM黑键长8.6CM宽0.9CM ，8:3*/
     </style>
+    <script src="https://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
 </head>
 <body>
     <div class="audio">
         <div class="audio-img">
-
+            <div class="rotate-img"></div>
+            <div class="icon">
+                <div class="glyphicon glyphicon-play"></div>
+                <div class="glyphicon glyphicon-pause"></div>
+            </div>
+            <div class="audio-info">
+                <h4 class="text-center">天黑日记</h4>
+                <div class="text-center">
+                    歌手：<a href="https://baike.baidu.com/item/张语格/4971296" target="_blank">张语格</a>
+                    <br />
+                    作词：浅　紫
+                    <br />
+                    作曲：林从胤
+                    <br />
+                </div>
+            </div>
         </div>
-        <div class="audio-info">
-            <audio controls="" src="张语格 - 天黑日记.mp3"></audio>
+        <div class="audio-music">
+            <audio src="张语格 - 天黑日记.mp3"></audio>
+            <div class="audio-lyrics">
+                <ul>
+                    <li class="lrc-sentence"><a href="https://imgsa.baidu.com/forum/pic/item/5da39c3433fa828b41e51afdf71f4134960a5a0d.jpg" target="_blank" title="《天黑日记》简谱">天黑日记</a></li>
+                    <li class="lrc-sentence">(网络剧《贴身校花》插曲)</li>
+                    <li class="lrc-sentence">&nbsp;</li>
+                    <li class="lrc-sentence">闭上眼享受着天黑</li>
+                    <li class="lrc-sentence">手里微风反方向吹</li>
+                    <li class="lrc-sentence">我留在屋顶黄昏很美</li>
+                    <li class="lrc-sentence">每个剪影偏像少了个谁</li>
+                    <li class="lrc-sentence">等自己被夜色包围</li>
+                    <li class="lrc-sentence">往事片段支离破碎</li>
+                    <li class="lrc-sentence">一声歌谣哄过一滴泪</li>
+                    <li class="lrc-sentence">有时也只是等一句安慰</li>
+                    <li class="lrc-sentence">放下吧 别害怕</li>
+                    <li class="lrc-sentence">美景和回忆会慢慢淡化</li>
+                    <li class="lrc-sentence">留在照片里的微笑啊</li>
+                    <li class="lrc-sentence">有一天我会带着泪花捧着它</li>
+                    <li class="lrc-sentence">继续吧 别挣扎</li>
+                    <li class="lrc-sentence">逞强的笑声会让心沙哑</li>
+                    <li class="lrc-sentence">有什么好念念不忘吗</li>
+                    <li class="lrc-sentence">眼泪终会乘着翅膀带我出发</li>
+                    <li class="lrc-sentence">等自己被夜色包围</li>
+                    <li class="lrc-sentence">往事片段支离破碎</li>
+                    <li class="lrc-sentence">一声歌谣哄过一滴泪</li>
+                    <li class="lrc-sentence">有时也只是等一句安慰</li>
+                    <li class="lrc-sentence">放下吧 别害怕</li>
+                    <li class="lrc-sentence">美景和回忆会慢慢淡化</li>
+                    <li class="lrc-sentence">留在照片里的微笑啊</li>
+                    <li class="lrc-sentence">有一天我会带着泪花捧着它</li>
+                    <li class="lrc-sentence">继续吧 别挣扎</li>
+                    <li class="lrc-sentence">逞强的笑声会让心沙哑</li>
+                    <li class="lrc-sentence">有什么好念念不忘吗</li>
+                    <li class="lrc-sentence">眼泪终会乘着翅膀带我出发</li>
+                    <li class="lrc-sentence">放下吧 别害怕</li>
+                    <li class="lrc-sentence">美景和回忆会慢慢淡化</li>
+                    <li class="lrc-sentence">留在照片里的微笑啊</li>
+                    <li class="lrc-sentence">有一天我会带着泪花捧着它</li>
+                    <li class="lrc-sentence">继续吧 别挣扎</li>
+                    <li class="lrc-sentence">逞强的笑声会让心沙哑</li>
+                    <li class="lrc-sentence">有什么好念念不忘吗</li>
+                    <li class="lrc-sentence">眼泪终会乘着翅膀带我出发</li>
+                    <li class="lrc-sentence">&nbsp;</li>
+                </ul>
+            </div>
+            <div class="audio-operns">
+
+            </div>
         </div>
     </div>
     <div class="fall">
@@ -140,135 +303,179 @@
     <!--钢琴键88个-->
     <div class="piano">
         <div class="keys-white">
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white">
-                <div class="key-black"></div>
-            </div>
-            <div class="key-white"></div>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white key-c" key="C1"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white key-c" key="C2"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white key-c" key="C3"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white key-c" key="C4"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white key-c" key="C5"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white key-c" key="C6"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white key-c" key="C7"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+            <button class="key-white"></button>
+        </div>
+
+        <div class="keys-black">
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"><button></button></div>
+            <div class="key-black"></div>
         </div>
     </div>
     <script type="text/javascript">
+        var audio = document.getElementsByTagName('audio')[0];
+        var note = {
+            key: "D",
+            high: [{
+                note: "1",
+                beat: 1,
 
 
+            }, {
+                note: "5",
+
+            }, {
+                note: "1",
+
+            }, {
+                note: "5",
+
+            }],
+            low: [{}]
+        }
+        $(function () {
+            $(".icon").click(function () {
+                if (audio.currentTime > 0)
+                    $(".audio-img").toggleClass("pause");
+                else
+                    $(".audio-img").toggleClass("playing");
+                $(".icon").toggleClass("play");
+                if (audio.paused) {
+                    audio.play();
+                }
+                else {
+                    audio.pause();
+                }
+            });
+
+            //播放中触发
+            audio.onplay = function () {
+                if (audio.currentTime == 251.364331) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    //$(".audio-img").attr("class", "audio-img");
+                    $(".audio-img").toggleClass("pause");
+                    $(".icon").removeClass("play");
+                }
+                console.log(audio.currentTime);
+            }
+
+            //$(".key-white").on("mousedown", function () {
+            //    $(this).addClass("green");
+            //}).on("mouseup", function () {
+            //    $(this).removeClass("green");
+            //}).on("mouseout", function () {
+            //    $(this).removeClass("green");
+            //});
+
+            //$(".key-black button").on("mousedown", function () {
+            //    $(this).addClass("green");
+            //}).on("mouseup", function () {
+            //    $(this).removeClass("green");
+            //}).on("mouseout", function () {
+            //    $(this).removeClass("green");
+            //});
+        });
     </script>
 </body>
 </html>
