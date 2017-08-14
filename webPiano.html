@@ -9,7 +9,6 @@
             0% {
                 -webkit-transform: rotate(0deg);
             }
-
             100% {
                 -webkit-transform: rotate(360deg);
             }
@@ -19,7 +18,6 @@
             0% {
                 -webkit-transform: rotate(0deg);
             }
-
             100% {
                 -webkit-transform: rotate(360deg);
             }
@@ -29,9 +27,94 @@
             0% {
                 -webkit-transform: rotate(0deg);
             }
-
             100% {
                 -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(25137px);
+            }
+        }
+
+        @-webkit-keyframes fall {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(25137px);
+            }
+        }
+
+        @-moz-keyframes fall {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(25137px);
+            }
+        }
+        @keyframes lyric {
+            0%,100% {
+                color: black;
+            }
+            20%,80% {
+                color: #91CCEA;
+                font-size: 1.25em;
+            }
+        }
+
+        @-webkit-keyframes lyric {
+            0%,100% {
+                color: black;
+            }
+            20%,80% {
+                color: #91CCEA;
+                font-size: 1.25em;
+            }
+        }
+
+        @-moz-keyframes lyric {
+            0%,100% {
+                color: black;
+            }
+            20%,80% {
+                color: #91CCEA;
+                font-size: 1.25em;
+            }
+        }
+        
+        @keyframes panel {
+            0%{
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        @-webkit-keyframes panel {
+            0%{
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        @-moz-keyframes panel {
+            0%{
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-100%);
             }
         }
 
@@ -45,13 +128,41 @@
             height: 100%;
         }
 
-        .fall {
+        .blur {
             height: calc(100% - 440px);
             width: 100%;
             background: #002B36;
             filter: blur(20px);
             clear: both;
         }
+
+        .fall {
+            height: calc(100% - 440px);
+            width: 100%;
+            position: fixed;
+            top: 290px;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+        }
+
+        .waterfall {
+            height: 25137px;
+            animation: fall linear 251.37s;
+            position: relative;
+            margin-top: calc(-25137px + 507px);
+        }
+
+            .waterfall div {
+                text-align: center;
+                position: absolute;
+                width: calc(100% / 52);
+            }
+
+                .waterfall div.black {
+                    width: calc(100% / 52 * 0.7);
+                    transform: translateX(-50%);
+                }
 
         .audio {
             width: 1366px;
@@ -115,7 +226,7 @@
             animation: rotate linear 10s infinite;
         }
 
-        .pause .rotate-img {
+        .pause .rotate-img, .waterfall.pause,ul.pause,ul.pause li {
             animation-play-state: paused;
         }
 
@@ -137,6 +248,12 @@
             width: 250px;
             float: left;
             padding-bottom: 20px;
+        }
+        .audio-lyrics ul {
+            animation-name: panel;
+            animation-duration: 214s;
+            animation-timing-function: linear;
+            animation-delay: 37s;
         }
 
         .audio-operns {
@@ -204,14 +321,6 @@
                 width: 70%;
             }
 
-        /*.key-black:nth-child(5n+1) {
-                margin-right: calc(100% / 52);
-            }
-
-            .key-black:nth-child(5n+3) {
-                margin-right: calc(100% / 52);
-            }*/
-
         .green {
             background: #A1DE29 !important;
         }
@@ -220,8 +329,13 @@
             background: #40A8DD !important;
         }
 
-        .lrc-sentence.current {
-            color: #91CCEA;
+        .transform {
+            background: transparent !important;
+        }
+
+        .lrc-sentence{
+            animation-name: lyric;
+            animation-timing-function: linear;
         }
         /*白键长14.4CM宽2.4CM黑键长8.6CM宽0.9CM ，8:3*/
     </style>
@@ -240,7 +354,7 @@
                 <div class="text-center">
                     歌手：<a href="https://baike.baidu.com/item/张语格/4971296" target="_blank">张语格</a>
                     <br />
-                    作词：浅　紫
+                    作词：浅 紫
                     <br />
                     作曲：林从胤
                     <br />
@@ -250,47 +364,55 @@
         <div class="audio-music">
             <audio src="张语格 - 天黑日记.mp3"></audio>
             <div class="audio-lyrics">
-                <ul>
+                <ul class="pause">
                     <li class="lrc-sentence"><a href="https://imgsa.baidu.com/forum/pic/item/5da39c3433fa828b41e51afdf71f4134960a5a0d.jpg" target="_blank" title="《天黑日记》简谱">天黑日记</a></li>
-                    <li class="lrc-sentence">(网络剧《贴身校花》插曲)</li>
-                    <li class="lrc-sentence">&nbsp;</li>
-                    <li class="lrc-sentence">闭上眼享受着天黑</li>
-                    <li class="lrc-sentence">手里微风反方向吹</li>
-                    <li class="lrc-sentence">我留在屋顶黄昏很美</li>
-                    <li class="lrc-sentence">每个剪影偏像少了个谁</li>
-                    <li class="lrc-sentence">等自己被夜色包围</li>
-                    <li class="lrc-sentence">往事片段支离破碎</li>
-                    <li class="lrc-sentence">一声歌谣哄过一滴泪</li>
-                    <li class="lrc-sentence">有时也只是等一句安慰</li>
-                    <li class="lrc-sentence">放下吧 别害怕</li>
-                    <li class="lrc-sentence">美景和回忆会慢慢淡化</li>
-                    <li class="lrc-sentence">留在照片里的微笑啊</li>
-                    <li class="lrc-sentence">有一天我会带着泪花捧着它</li>
-                    <li class="lrc-sentence">继续吧 别挣扎</li>
-                    <li class="lrc-sentence">逞强的笑声会让心沙哑</li>
-                    <li class="lrc-sentence">有什么好念念不忘吗</li>
-                    <li class="lrc-sentence">眼泪终会乘着翅膀带我出发</li>
-                    <li class="lrc-sentence">等自己被夜色包围</li>
-                    <li class="lrc-sentence">往事片段支离破碎</li>
-                    <li class="lrc-sentence">一声歌谣哄过一滴泪</li>
-                    <li class="lrc-sentence">有时也只是等一句安慰</li>
-                    <li class="lrc-sentence">放下吧 别害怕</li>
-                    <li class="lrc-sentence">美景和回忆会慢慢淡化</li>
-                    <li class="lrc-sentence">留在照片里的微笑啊</li>
-                    <li class="lrc-sentence">有一天我会带着泪花捧着它</li>
-                    <li class="lrc-sentence">继续吧 别挣扎</li>
-                    <li class="lrc-sentence">逞强的笑声会让心沙哑</li>
-                    <li class="lrc-sentence">有什么好念念不忘吗</li>
-                    <li class="lrc-sentence">眼泪终会乘着翅膀带我出发</li>
-                    <li class="lrc-sentence">放下吧 别害怕</li>
-                    <li class="lrc-sentence">美景和回忆会慢慢淡化</li>
-                    <li class="lrc-sentence">留在照片里的微笑啊</li>
-                    <li class="lrc-sentence">有一天我会带着泪花捧着它</li>
-                    <li class="lrc-sentence">继续吧 别挣扎</li>
-                    <li class="lrc-sentence">逞强的笑声会让心沙哑</li>
-                    <li class="lrc-sentence">有什么好念念不忘吗</li>
-                    <li class="lrc-sentence">眼泪终会乘着翅膀带我出发</li>
-                    <li class="lrc-sentence">&nbsp;</li>
+                    <li class="lrc-sentence" style="animation-delay: 1s; animation-duration: 37s;">(网络剧《贴身校花》插曲)</li>
+                    <li class="lrc-sentence" style="">&nbsp;</li>
+                    <li class="lrc-sentence" style="animation-delay: 37s; animation-duration: 5s;">闭上眼享受着天黑</li>
+                    <li class="lrc-sentence" style="animation-delay: 41s; animation-duration: 5s;">手里微风反方向吹</li>
+                    <li class="lrc-sentence" style="animation-delay: 45s; animation-duration: 5s;">我留在屋顶黄昏很美</li>
+                    <li class="lrc-sentence" style="animation-delay: 49s; animation-duration: 5s;">每个剪影偏像少了个谁</li>
+                    <li class="lrc-sentence" style="animation-delay: 53s; animation-duration: 5s;">等自己被夜色包围</li>
+                    <li class="lrc-sentence" style="animation-delay: 57s; animation-duration: 5s;">往事片段支离破碎</li>
+                    <li class="lrc-sentence" style="animation-delay: 61s; animation-duration: 4s;">一声歌谣哄过一滴泪</li>
+                    <li class="lrc-sentence" style="animation-delay: 64s; animation-duration: 5s;">有时也只是等一句安慰</li>
+                    <li class="lrc-sentence" style="animation-delay: 68s; animation-duration: 4s;">放下吧 别害怕</li>
+                    <li class="lrc-sentence" style="animation-delay: 71s; animation-duration: 5s;">美景和回忆会慢慢淡化</li>
+                    <li class="lrc-sentence" style="animation-delay: 75s; animation-duration: 5s;">留在照片里的微笑啊</li>
+                    <li class="lrc-sentence" style="animation-delay: 79s; animation-duration: 5s;">有一天我会带着泪花捧着它</li>
+                    <li class="lrc-sentence" style="animation-delay: 83s; animation-duration: 4s;">继续吧 别挣扎</li>
+                    <li class="lrc-sentence" style="animation-delay: 87s; animation-duration: 5s;">逞强的笑声会让心沙哑</li>
+                    <li class="lrc-sentence" style="animation-delay: 91s; animation-duration: 5s;">有什么好念念不忘吗</li>
+                    <li class="lrc-sentence" style="animation-delay: 95s; animation-duration: 8s;">眼泪终会乘着翅膀带我出发</li>
+                    <li class="lrc-sentence" style="">&nbsp;</li>
+                    <li class="lrc-sentence" style="">&nbsp;</li>
+                    <li class="lrc-sentence" style="">&nbsp;</li>
+                    <li class="lrc-sentence" style="">&nbsp;</li>
+                    <li class="lrc-sentence" style="">&nbsp;</li>
+                    <li class="lrc-sentence" style="">&nbsp;</li>
+                    <li class="lrc-sentence" style="">&nbsp;</li>
+                    <li class="lrc-sentence" style="animation-delay: 131s; animation-duration: 5s;">等自己被夜色包围</li>
+                    <li class="lrc-sentence" style="animation-delay: 135s; animation-duration: 5s;">往事片段支离破碎</li>
+                    <li class="lrc-sentence" style="animation-delay: 139s; animation-duration: 5s;">一声歌谣哄过一滴泪</li>
+                    <li class="lrc-sentence" style="animation-delay: 143s; animation-duration: 5s;">有时也只是等一句安慰</li>
+                    <li class="lrc-sentence" style="animation-delay: 147s; animation-duration: 4s;">放下吧 别害怕</li>
+                    <li class="lrc-sentence" style="animation-delay: 150s; animation-duration: 5s;">美景和回忆会慢慢淡化</li>
+                    <li class="lrc-sentence" style="animation-delay: 154s; animation-duration: 5s;">留在照片里的微笑啊</li>
+                    <li class="lrc-sentence" style="animation-delay: 158s; animation-duration: 5s;">有一天我会带着泪花捧着它</li>
+                    <li class="lrc-sentence" style="animation-delay: 162s; animation-duration: 4s;">继续吧 别挣扎</li>
+                    <li class="lrc-sentence" style="animation-delay: 166s; animation-duration: 5s;">逞强的笑声会让心沙哑</li>
+                    <li class="lrc-sentence" style="animation-delay: 170s; animation-duration: 5s;">有什么好念念不忘吗</li>
+                    <li class="lrc-sentence" style="animation-delay: 174s; animation-duration: 7s;">眼泪终会乘着翅膀带我出发</li>
+                    <li class="lrc-sentence" style="">&nbsp;</li>
+                    <li class="lrc-sentence" style="animation-delay: 183s; animation-duration: 5s;">放下吧 别害怕</li>
+                    <li class="lrc-sentence" style="animation-delay: 187s; animation-duration: 5s;">美景和回忆会慢慢淡化</li>
+                    <li class="lrc-sentence" style="animation-delay: 191s; animation-duration: 5s;">留在照片里的微笑啊</li>
+                    <li class="lrc-sentence" style="animation-delay: 195s; animation-duration: 5s;">有一天我会带着泪花捧着它</li>
+                    <li class="lrc-sentence" style="animation-delay: 199s; animation-duration: 5s;">继续吧 别挣扎</li>
+                    <li class="lrc-sentence" style="animation-delay: 203s; animation-duration: 5s;">逞强的笑声会让心沙哑</li>
+                    <li class="lrc-sentence" style="animation-delay: 207s; animation-duration: 5s;">有什么好念念不忘吗</li>
+                    <li class="lrc-sentence" style="animation-delay: 211s; animation-duration: 8s;">眼泪终会乘着翅膀带我出发</li>
+                    <li class="lrc-sentence" style="animation-delay: 215s; animation-duration: 5s;">&nbsp;</li>
                 </ul>
             </div>
             <div class="audio-operns">
@@ -298,7 +420,10 @@
             </div>
         </div>
     </div>
+    <div class="blur"></div>
     <div class="fall">
+        <!--160速度，1拍=37.5px-->
+        <div class="waterfall pause"></div>
     </div>
     <!--钢琴键88个-->
     <div class="piano">
@@ -356,7 +481,6 @@
             <button class="key-white"></button>
             <button class="key-white"></button>
         </div>
-
         <div class="keys-black">
             <div class="key-black"></div>
             <div class="key-black"><button></button></div>
@@ -414,31 +538,390 @@
     </div>
     <script type="text/javascript">
         var audio = document.getElementsByTagName('audio')[0];
+        //160速度，1拍0.375s
         var note = {
-            key: "D",
+            key: "Eb",
+            speed: "160",
+            beat: 4,
+            bar: 4,
             high: [{
-                note: "1",
+                noteSimple: "1",
                 beat: 1,
-
-
+                speed: 160,
+                note: "Eb6",
+                va: 2,
+                time: 3.25,
+                noteIndex: 39,
+                isBlack: true
             }, {
-                note: "5",
-
+                noteSimple: "5",
+                beat: 1,
+                speed: 160,
+                note: "Bb5",
+                va: 1,
+                time: 3.25 + 0.375 * 1,
+                noteIndex: 36,
+                isBlack: true
             }, {
-                note: "1",
-
+                noteSimple: "1",
+                beat: 1,
+                speed: 160,
+                note: "Eb6",
+                va: 2,
+                time: 3.25 + 0.375 * 2,
+                noteIndex: 39,
+                isBlack: true
             }, {
-                note: "5",
-
+                noteSimple: "5",
+                beat: 1,
+                speed: 160,
+                note: "Bb5",
+                va: 1,
+                time: 3.25 + 0.375 * 3,
+                noteIndex: 36,
+                isBlack: true
+            }, {
+                noteSimple: "7",
+                beat: 1,
+                speed: 160,
+                note: "D6",
+                va: 1,
+                time: 3.25 + 0.375 * 4,
+                noteIndex: 38,
+                isBlack: false
+            }, {
+                noteSimple: "5",
+                beat: 1,
+                speed: 160,
+                note: "Bb5",
+                va: 1,
+                time: 3.25 + 0.375 * 5,
+                noteIndex: 36,
+                isBlack: true
+            }, {
+                noteSimple: "4",
+                beat: 1,
+                speed: 160,
+                note: "Db6",
+                va: 1,
+                time: 3.25 + 0.375 * 6,
+                noteIndex: 35,
+                isBlack: true
+            }, {
+                noteSimple: "5",
+                beat: 1,
+                speed: 160,
+                note: "Bb5",
+                va: 1,
+                time: 3.25 + 0.375 * 7,
+                noteIndex: 36,
+                isBlack: true
+            }, {
+                noteSimple: "1",
+                beat: 1,
+                speed: 160,
+                note: "Eb6",
+                va: 2,
+                time: 3.25 + 0.375 * 8,
+                noteIndex: 39,
+                isBlack: true
+            }, {
+                noteSimple: "3",
+                beat: 1,
+                speed: 160,
+                note: "G5",
+                va: 1,
+                time: 3.25 + 0.375 * 9,
+                noteIndex: 34,
+                isBlack: false
+            }, {
+                noteSimple: "6",
+                beat: 1,
+                speed: 160,
+                note: "C6",
+                va: 1,
+                time: 3.25 + 0.375 * 10,
+                noteIndex: 37,
+                isBlack: false
+            }, {
+                noteSimple: "3",
+                beat: 1,
+                speed: 160,
+                note: "G5",
+                va: 1,
+                time: 3.25 + 0.375 * 11,
+                noteIndex: 34,
+                isBlack: false
+            }, {
+                noteSimple: "5",
+                beat: 1,
+                speed: 160,
+                note: "Bb6",
+                va: 2,
+                time: 3.25 + 0.375 * 12,
+                noteIndex: 36,
+                isBlack: true
+            }, {
+                noteSimple: "3",
+                beat: 1,
+                speed: 160,
+                note: "G5",
+                va: 1,
+                time: 3.25 + 0.375 * 13,
+                noteIndex: 34,
+                isBlack: false
+            }, {
+                noteSimple: "7",
+                beat: 1,
+                speed: 160,
+                note: "D6",
+                va: 1,
+                time: 3.25 + 0.375 * 14,
+                noteIndex: 38,
+                isBlack: false
+            }, {
+                noteSimple: "3",
+                beat: 1,
+                speed: 160,
+                note: "G5",
+                va: 1,
+                time: 3.25 + 0.375 * 15,
+                noteIndex: 34,
+                isBlack: false
+            }, {
+                noteSimple: "4",
+                beat: 1,
+                speed: 160,
+                note: "Ab5",
+                va: 1,
+                time: 3.25 + 0.375 * 16,
+                noteIndex: 36,
+                isBlack: true
+            }, {
+                noteSimple: "1",
+                beat: 1,
+                speed: 160,
+                note: "Eb6",
+                va: 2,
+                time: 3.25 + 0.375 * 17,
+                noteIndex: 39,
+                isBlack: true
+            }, {
+                noteSimple: "7",
+                beat: 1,
+                speed: 160,
+                note: "D6",
+                va: 1,
+                time: 3.25 + 0.375 * 18,
+                noteIndex: 38,
+                isBlack: false
+            }, {
+                noteSimple: "1",
+                beat: 1,
+                speed: 160,
+                note: "Eb6",
+                va: 2,
+                time: 3.25 + 0.375 * 19,
+                noteIndex: 39,
+                isBlack: true
+            }, {
+                noteSimple: "1",
+                beat: 1,
+                speed: 160,
+                note: "Eb6",
+                va: 2,
+                time: 3.25 + 0.375 * 20,
+                noteIndex: 39,
+                isBlack: true
+            }, {
+                noteSimple: "2",
+                beat: 1,
+                speed: 160,
+                note: "F5",
+                va: 1,
+                time: 3.25 + 0.375 * 21,
+                noteIndex: 33,
+                isBlack: false
+            }, {
+                noteSimple: "7",
+                beat: 1,
+                speed: 160,
+                note: "D6",
+                va: 1,
+                time: 3.25 + 0.375 * 22,
+                noteIndex: 38,
+                isBlack: false
+            }, {
+                noteSimple: "2",
+                beat: 1,
+                speed: 160,
+                note: "F5",
+                va: 1,
+                time: 3.25 + 0.375 * 23,
+                noteIndex: 33,
+                isBlack: false
+            }, {
+                noteSimple: "1",
+                beat: 1,
+                speed: 160,
+                note: "Eb6",
+                va: 2,
+                time: 3.25 + 0.375*24,
+                noteIndex: 39,
+                isBlack: true
+            }, {
+                noteSimple: "5",
+                beat: 1,
+                speed: 160,
+                note: "Bb5",
+                va: 1,
+                time: 3.25 + 0.375 * 25,
+                noteIndex: 36,
+                isBlack: false
+            }, {
+                noteSimple: "3",
+                beat: 1,
+                speed: 160,
+                note: "G5",
+                va: 1,
+                time: 3.25 + 0.375 * 26,
+                noteIndex: 39,
+                isBlack: true
+            }, {
+                noteSimple: "5",
+                beat: 1,
+                speed: 160,
+                note: "Bb5",
+                va: 1,
+                time: 3.25 + 0.375 * 27,
+                noteIndex: 36,
+                isBlack: true
             }],
-            low: [{}]
+            low: [{
+                noteSimple: "1",
+                beat: 2,
+                speed: 160,
+                note: "Eb6",
+                va: 1,
+                time: 3.25,
+                noteIndex: 32,
+                isBlack: true
+            }, {
+                noteSimple: "3",
+                beat: 2,
+                speed: 160,
+                note: "G6",
+                va: 1,
+                time: 3.25 + 0.375 * 2,
+                noteIndex: 34,
+                isBlack: false
+            }, {
+                noteSimple: "7",
+                beat: 2,
+                speed: 160,
+                note: "D5",
+                va: 0,
+                time: 3.25 + 0.375 * 4,
+                noteIndex: 31,
+                isBlack: true
+            }, {
+                noteSimple: "2",
+                beat: 2,
+                speed: 160,
+                note: "F5",
+                va: 1,
+                time: 3.25 + 0.375 * 6,
+                noteIndex: 33,
+                isBlack: false
+            }, {
+                noteSimple: "6",
+                beat: 2,
+                speed: 160,
+                note: "C5",
+                va: 0,
+                time: 3.25 + 0.375 * 8,
+                noteIndex: 30,
+                isBlack: false
+            }, {
+                noteSimple: "1",
+                beat: 2,
+                speed: 160,
+                note: "Eb5",
+                va: 1,
+                time: 3.25 + 0.375 * 10,
+                noteIndex: 32,
+                isBlack: true
+            }, {
+                noteSimple: "5",
+                beat: 2,
+                speed: 160,
+                note: "Bb5",
+                va: 0,
+                time: 3.25 + 0.375 * 12,
+                noteIndex: 29,
+                isBlack: true
+            }, {
+                noteSimple: "7",
+                beat: 2,
+                speed: 160,
+                note: "D5",
+                va: 1,
+                time: 3.25 + 0.375 * 14,
+                noteIndex: 31,
+                isBlack: false
+            }, {
+                noteSimple: "4",
+                beat: 2,
+                speed: 160,
+                note: "Ab5",
+                va: 0,
+                time: 3.25 + 0.375 * 16,
+                noteIndex: 28,
+                isBlack: true
+            }, {
+                noteSimple: "6",
+                beat: 2,
+                speed: 160,
+                note: "C5",
+                va: 1,
+                time: 3.25 + 0.375 * 18,
+                noteIndex: 30,
+                isBlack: false
+            }, {
+                noteSimple: "5",
+                beat: 2,
+                speed: 160,
+                note: "Bb5",
+                va: 0,
+                time: 3.25 + 0.375 * 20,
+                noteIndex: 29,
+                isBlack: true
+            }, {
+                noteSimple: "7",
+                beat: 2,
+                speed: 160,
+                note: "D5",
+                va: 1,
+                time: 3.25 + 0.375 * 22,
+                noteIndex: 31,
+                isBlack: false
+            }]
         }
+
+        //写计时器来算歌词
+        var calcLyrics = function() {
+            
+        }
+
         $(function () {
             $(".icon").click(function () {
-                if (audio.currentTime > 0)
+                if (audio.currentTime > 0) {
                     $(".audio-img").toggleClass("pause");
-                else
+                } else {
                     $(".audio-img").toggleClass("playing");
+                }
+                $(".waterfall").toggleClass("pause");
+                $(".audio-lyrics ul").toggleClass("pause");
                 $(".icon").toggleClass("play");
                 if (audio.paused) {
                     audio.play();
@@ -448,16 +931,21 @@
                 }
             });
 
-            //播放中触发
+            //开始播放时触发
             audio.onplay = function () {
-                if (audio.currentTime == 251.364331) {
-                    audio.pause();
-                    audio.currentTime = 0;
-                    //$(".audio-img").attr("class", "audio-img");
-                    $(".audio-img").toggleClass("pause");
-                    $(".icon").removeClass("play");
-                }
+                console.log("播放");
                 console.log(audio.currentTime);
+            }
+            audio.onpause = function () {
+                console.log("暂停");
+                console.log(audio.currentTime);
+            }
+            audio.onended = function () {
+                audio.pause();
+                audio.currentTime = 0;
+                //$(".audio-img").attr("class", "audio-img");
+                $(".audio-img").removeClass("playing").removeClass("pause");
+                $(".icon").removeClass("play");
             }
 
             //$(".key-white").on("mousedown", function () {
@@ -475,6 +963,20 @@
             //}).on("mouseout", function () {
             //    $(this).removeClass("green");
             //});
+
+            $.each(note.high, function (i, item) {
+                var className = "green" + (item.isBlack ? " black" : "");
+                var height = 6000 / item.speed * item.beat;
+                var time = item.time * 100;
+                $(".waterfall").append('<div class="' + className + '" style="height: ' + height + 'px; bottom: ' + time + 'px;left: calc(100% / 52 * ' + item.noteIndex + ')">' + item.note + '</div>');
+            });
+            $.each(note.low, function (i, item) {
+                var className = "blue" + (item.isBlack ? " black" : "");
+                var height = 6000 / item.speed * item.beat;
+                var time = item.time * 100;
+                $(".waterfall").append('<div class="' + className + '" style="height: ' + height + 'px; bottom: ' + time + 'px;left: calc(100% / 52 * ' + item.noteIndex + ')">' + item.note + '</div>');
+            });
+
         });
     </script>
 </body>
