@@ -9,6 +9,7 @@
             0% {
                 -webkit-transform: rotate(0deg);
             }
+
             100% {
                 -webkit-transform: rotate(360deg);
             }
@@ -18,6 +19,7 @@
             0% {
                 -webkit-transform: rotate(0deg);
             }
+
             100% {
                 -webkit-transform: rotate(360deg);
             }
@@ -27,6 +29,7 @@
             0% {
                 -webkit-transform: rotate(0deg);
             }
+
             100% {
                 -webkit-transform: rotate(360deg);
             }
@@ -36,8 +39,9 @@
             0% {
                 transform: translateY(0);
             }
+
             100% {
-                transform: translateY(25137px);
+                transform: translateY(50274px);
             }
         }
 
@@ -45,8 +49,9 @@
             0% {
                 transform: translateY(0);
             }
+
             100% {
-                transform: translateY(25137px);
+                transform: translateY(50274px);
             }
         }
 
@@ -54,14 +59,17 @@
             0% {
                 transform: translateY(0);
             }
+
             100% {
-                transform: translateY(25137px);
+                transform: translateY(50274px);
             }
         }
+
         @keyframes lyric {
             0%,100% {
                 color: black;
             }
+
             20%,80% {
                 color: #91CCEA;
                 font-size: 1.25em;
@@ -72,6 +80,7 @@
             0%,100% {
                 color: black;
             }
+
             20%,80% {
                 color: #91CCEA;
                 font-size: 1.25em;
@@ -82,14 +91,15 @@
             0%,100% {
                 color: black;
             }
+
             20%,80% {
                 color: #91CCEA;
                 font-size: 1.25em;
             }
         }
-        
+
         @keyframes panel {
-            0%{
+            0% {
                 transform: translateY(0);
             }
 
@@ -99,7 +109,7 @@
         }
 
         @-webkit-keyframes panel {
-            0%{
+            0% {
                 transform: translateY(0);
             }
 
@@ -109,7 +119,7 @@
         }
 
         @-moz-keyframes panel {
-            0%{
+            0% {
                 transform: translateY(0);
             }
 
@@ -147,10 +157,11 @@
         }
 
         .waterfall {
-            height: 25137px;
+            height: 50274px;
             animation: fall linear 251.37s;
             position: relative;
-            margin-top: calc(-25137px + 507px);
+            margin-top: -50274px;
+            top: 100%;
         }
 
             .waterfall div {
@@ -226,7 +237,7 @@
             animation: rotate linear 10s infinite;
         }
 
-        .pause .rotate-img, .waterfall.pause,ul.pause,ul.pause li {
+        .pause .rotate-img, .waterfall.pause, ul.pause, ul.pause li {
             animation-play-state: paused;
         }
 
@@ -249,12 +260,13 @@
             float: left;
             padding-bottom: 20px;
         }
-        .audio-lyrics ul {
-            animation-name: panel;
-            animation-duration: 214s;
-            animation-timing-function: linear;
-            animation-delay: 37s;
-        }
+
+            .audio-lyrics ul {
+                animation-name: panel;
+                animation-duration: 214s;
+                animation-timing-function: linear;
+                animation-delay: 37s;
+            }
 
         .audio-operns {
             width: calc(100% - 250px);
@@ -333,7 +345,7 @@
             background: transparent !important;
         }
 
-        .lrc-sentence{
+        .lrc-sentence {
             animation-name: lyric;
             animation-timing-function: linear;
         }
@@ -431,54 +443,54 @@
             <button class="key-white"></button>
             <button class="key-white"></button>
             <button class="key-white key-c" key="C1"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
+            <button class="key-white key-c" key="D1"></button>
+            <button class="key-white key-c" key="E1"></button>
+            <button class="key-white key-c" key="F1"></button>
+            <button class="key-white key-c" key="G1"></button>
+            <button class="key-white key-c" key="A1"></button>
+            <button class="key-white key-c" key="B1"></button>
             <button class="key-white key-c" key="C2"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
+            <button class="key-white key-c" key="D2"></button>
+            <button class="key-white key-c" key="E2"></button>
+            <button class="key-white key-c" key="F2"></button>
+            <button class="key-white key-c" key="G2"></button>
+            <button class="key-white key-c" key="A2"></button>
+            <button class="key-white key-c" key="B2"></button>
             <button class="key-white key-c" key="C3"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
+            <button class="key-white key-c" key="D3"></button>
+            <button class="key-white key-c" key="E3"></button>
+            <button class="key-white key-c" key="F3"></button>
+            <button class="key-white key-c" key="G3"></button>
+            <button class="key-white key-c" key="A3"></button>
+            <button class="key-white key-c" key="B3"></button>
             <button class="key-white key-c" key="C4"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
+            <button class="key-white key-c" key="D4"></button>
+            <button class="key-white key-c" key="E4"></button>
+            <button class="key-white key-c" key="F4"></button>
+            <button class="key-white key-c" key="G4"></button>
+            <button class="key-white key-c" key="A4"></button>
+            <button class="key-white key-c" key="B4"></button>
             <button class="key-white key-c" key="C5"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
+            <button class="key-white key-c" key="D5"></button>
+            <button class="key-white key-c" key="E5"></button>
+            <button class="key-white key-c" key="F5"></button>
+            <button class="key-white key-c" key="G5"></button>
+            <button class="key-white key-c" key="A5"></button>
+            <button class="key-white key-c" key="B5"></button>
             <button class="key-white key-c" key="C6"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
+            <button class="key-white key-c" key="D6"></button>
+            <button class="key-white key-c" key="E6"></button>
+            <button class="key-white key-c" key="F6"></button>
+            <button class="key-white key-c" key="G6"></button>
+            <button class="key-white key-c" key="A6"></button>
+            <button class="key-white key-c" key="B6"></button>
             <button class="key-white key-c" key="C7"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white"></button>
+            <button class="key-white key-c" key="D7"></button>
+            <button class="key-white key-c" key="E7"></button>
+            <button class="key-white key-c" key="F7"></button>
+            <button class="key-white key-c" key="G7"></button>
+            <button class="key-white key-c" key="A7"></button>
+            <button class="key-white key-c" key="B7"></button>
             <button class="key-white"></button>
         </div>
         <div class="keys-black">
@@ -537,8 +549,26 @@
         </div>
     </div>
     <script type="text/javascript">
+        function key(item, className) {
+            setTimeout(function () {
+                if (item.isBlack) {
+                    $(".key-white:eq(" + item.noteIndex + ") button").addClass(className);
+                } else {
+                    $(".key-white:eq(" + item.noteIndex + ")").addClass(className);
+                }
+            }, item.time * 1000);
+            setTimeout(function () {
+                if (item.isBlack) {
+                    $(".key-white:eq(" + item.noteIndex + ") button").removeClass(className);
+                } else {
+                    $(".key-white:eq(" + item.noteIndex + ")").removeClass(className);
+                }
+            }, item.time * 1000 + item.beat * 60000 / item.speed);
+        }
+
         var audio = document.getElementsByTagName('audio')[0];
         //160速度，1拍0.375s
+        //120速度，1拍0.5s
         var note = {
             key: "Eb",
             speed: "160",
@@ -766,7 +796,7 @@
                 speed: 160,
                 note: "Eb6",
                 va: 2,
-                time: 3.25 + 0.375*24,
+                time: 3.25 + 0.375 * 24,
                 noteIndex: 39,
                 isBlack: true
             }, {
@@ -796,7 +826,296 @@
                 time: 3.25 + 0.375 * 27,
                 noteIndex: 36,
                 isBlack: true
+            }, {
+                noteSimple: "5",
+                beat: 1,
+                speed: 120,
+                note: "Bb5",
+                va: 1,
+                time: 16.75,
+                noteIndex: 36,
+                isBlack: true
+            }, {
+                noteSimple: "4",
+                beat: 1,
+                speed: 120,
+                note: "Ab5",
+                va: 1,
+                time: 16.75 + 0.5 * 1,
+                noteIndex: 35,
+                isBlack: true
+            }, {
+                noteSimple: "3",
+                beat: 2,
+                speed: 120,
+                note: "G5",
+                va: 1,
+                time: 16.75 + 0.5 * 2,
+                noteIndex: 34,
+                isBlack: false
+            }, {
+                noteSimple: "4",
+                beat: 1,
+                speed: 120,
+                note: "Ab5",
+                va: 1,
+                time: 16.75 + 0.5 * 4,
+                noteIndex: 35,
+                isBlack: true
+            }, {
+                noteSimple: "3",
+                beat: 1,
+                speed: 120,
+                note: "G5",
+                va: 1,
+                time: 16.75 + 0.5 * 5,
+                noteIndex: 34,
+                isBlack: false
+            }, {
+                noteSimple: "2",
+                beat: 2,
+                speed: 120,
+                note: "F5",
+                va: 1,
+                time: 16.75 + 0.5 * 6,
+                noteIndex: 33,
+                isBlack: false
+            }, {
+                noteSimple: "3",
+                beat: 0.5,
+                speed: 120,
+                note: "G5",
+                va: 1,
+                time: 16.75 + 0.5 * 8,
+                noteIndex: 34,
+                isBlack: false
+            }, {
+                noteSimple: "2",
+                beat: 0.125,
+                speed: 120,
+                note: "F5",
+                va: 1,
+                time: 16.75 + 0.5 * 8.5,
+                noteIndex: 33,
+                isBlack: false
+            }, {
+                noteSimple: "3",
+                beat: 0.125,
+                speed: 120,
+                note: "G5",
+                va: 1,
+                time: 16.75 + 0.5 * 8.625,
+                noteIndex: 34,
+                isBlack: false
+            }, {
+                noteSimple: "2",
+                beat: 0.25,
+                speed: 120,
+                note: "F5",
+                va: 1,
+                time: 16.75 + 0.5 * 8.75,
+                noteIndex: 33,
+                isBlack: false
+            }, {
+                noteSimple: "1",
+                beat: 0.5,
+                speed: 120,
+                note: "Eb5",
+                va: 1,
+                time: 16.75 + 0.5 * 9,
+                noteIndex: 32,
+                isBlack: false
+            }, {
+                noteSimple: "7",
+                beat: 0.5,
+                speed: 120,
+                note: "D5",
+                va: 0,
+                time: 16.75 + 0.5 * 9.5,
+                noteIndex: 31,
+                isBlack: false
+            }, {
+                noteSimple: "1",
+                beat: 1,
+                speed: 120,
+                note: "Eb5",
+                va: 1,
+                time: 16.75 + 0.5 * 10,
+                noteIndex: 32,
+                isBlack: true
+            }, {
+                noteSimple: "1",
+                beat: 0.25,
+                speed: 120,
+                note: "Eb5",
+                va: 1,
+                time: 16.75 + 0.5 * 11,
+                noteIndex: 32,
+                isBlack: true
+            }, {
+                noteSimple: "2",
+                beat: 0.25,
+                speed: 120,
+                note: "F5",
+                va: 1,
+                time: 16.75 + 0.5 * 11.25,
+                noteIndex: 33,
+                isBlack: false
+            }, {
+                noteSimple: "3",
+                beat: 0.25,
+                speed: 120,
+                note: "G5",
+                va: 1,
+                time: 16.75 + 0.5 * 11.5,
+                noteIndex: 34,
+                isBlack: false
+            }, {
+                noteSimple: "4",
+                beat: 0.25,
+                speed: 120,
+                note: "Ab5",
+                va: 1,
+                time: 16.75 + 0.5 * 11.75,
+                noteIndex: 35,
+                isBlack: true
+            }, {
+                noteSimple: "5",
+                beat: 0.25,
+                speed: 120,
+                note: "Bb5",
+                va: 1,
+                time: 16.75 + 0.5 * 12,
+                noteIndex: 36,
+                isBlack: true
+            }, {
+                noteSimple: "6",
+                beat: 0.25,
+                speed: 120,
+                note: "F5",
+                va: 1,
+                time: 16.75 + 0.5 * 12.25,
+                noteIndex: 37,
+                isBlack: false
+            }, {
+                noteSimple: "5",
+                beat: 0.25,
+                speed: 120,
+                note: "Bb5",
+                va: 1,
+                time: 16.75 + 0.5 * 12.5,
+                noteIndex: 36,
+                isBlack: true
+            }, {
+                noteSimple: "4",
+                beat: 0.25,
+                speed: 120,
+                note: "Ab5",
+                va: 1,
+                time: 16.75 + 0.5 * 12.75,
+                noteIndex: 35,
+                isBlack: true
+            }, {
+                noteSimple: "3",
+                beat: 0.25,
+                speed: 120,
+                note: "G5",
+                va: 1,
+                time: 16.75 + 0.5 * 13,
+                noteIndex: 34,
+                isBlack: false
+            }, {
+                noteSimple: "2",
+                beat: 0.25,
+                speed: 120,
+                note: "F5",
+                va: 1,
+                time: 16.75 + 0.5 * 13.25,
+                noteIndex: 33,
+                isBlack: false
+            }, {
+                noteSimple: "1",
+                beat: 0.25,
+                speed: 120,
+                note: "Eb5",
+                va: 1,
+                time: 16.75 + 0.5 * 13.5,
+                noteIndex: 32,
+                isBlack: true
+            }, {
+                noteSimple: "2",
+                beat: 0.25,
+                speed: 120,
+                note: "F5",
+                va: 1,
+                time: 16.75 + 0.5 * 13.75,
+                noteIndex: 33,
+                isBlack: false
+            }, {
+                noteSimple: "7",
+                beat: 2,
+                speed: 120,
+                note: "D4",
+                va: 0,
+                time: 16.75 + 0.5 * 14,
+                noteIndex: 31,
+                isBlack: false
+            }, {
+                noteSimple: "1",
+                beat: 0.5,
+                speed: 120,
+                note: "Eb5",
+                va: 1,
+                time: 16.75 + 0.5 * 16,
+                noteIndex: 32,
+                isBlack: true
+            }, {
+                noteSimple: "7",
+                beat: 0.125,
+                speed: 120,
+                note: "D4",
+                va: 0,
+                time: 16.75 + 0.5 * 16.5,
+                noteIndex: 31,
+                isBlack: false
+            }, {
+                noteSimple: "1",
+                beat: 0.125,
+                speed: 120,
+                note: "Eb5",
+                va: 1,
+                time: 16.75 + 0.5 * 16.625,
+                noteIndex: 32,
+                isBlack: true
+            }, {
+                noteSimple: "7",
+                beat: 0.25,
+                speed: 120,
+                note: "D4",
+                va: 0,
+                time: 16.75 + 0.5 * 16.75,
+                noteIndex: 31,
+                isBlack: false
+            }, {
+                noteSimple: "6",
+                beat: 0.25,
+                speed: 120,
+                note: "C4",
+                va: 0,
+                time: 16.75 + 0.5 * 17,
+                noteIndex: 30,
+                isBlack: false
+            }, {
+                noteSimple: "5",
+                beat: 0.25,
+                speed: 120,
+                note: "Bb4",
+                va: 0,
+                time: 16.75 + 0.5 * 17.25,
+                noteIndex: 29,
+                isBlack: false
             }],
+
             low: [{
                 noteSimple: "1",
                 beat: 2,
@@ -908,11 +1227,6 @@
             }]
         }
 
-        //写计时器来算歌词
-        var calcLyrics = function() {
-            
-        }
-
         $(function () {
             $(".icon").click(function () {
                 if (audio.currentTime > 0) {
@@ -948,35 +1262,50 @@
                 $(".icon").removeClass("play");
             }
 
-            //$(".key-white").on("mousedown", function () {
-            //    $(this).addClass("green");
-            //}).on("mouseup", function () {
-            //    $(this).removeClass("green");
-            //}).on("mouseout", function () {
-            //    $(this).removeClass("green");
-            //});
-
-            //$(".key-black button").on("mousedown", function () {
-            //    $(this).addClass("green");
-            //}).on("mouseup", function () {
-            //    $(this).removeClass("green");
-            //}).on("mouseout", function () {
-            //    $(this).removeClass("green");
-            //});
-
-            $.each(note.high, function (i, item) {
-                var className = "green" + (item.isBlack ? " black" : "");
-                var height = 6000 / item.speed * item.beat;
-                var time = item.time * 100;
-                $(".waterfall").append('<div class="' + className + '" style="height: ' + height + 'px; bottom: ' + time + 'px;left: calc(100% / 52 * ' + item.noteIndex + ')">' + item.note + '</div>');
-            });
-            $.each(note.low, function (i, item) {
-                var className = "blue" + (item.isBlack ? " black" : "");
-                var height = 6000 / item.speed * item.beat;
-                var time = item.time * 100;
-                $(".waterfall").append('<div class="' + className + '" style="height: ' + height + 'px; bottom: ' + time + 'px;left: calc(100% / 52 * ' + item.noteIndex + ')">' + item.note + '</div>');
+            $(".key-white").on("mousedown", function () {
+                $(this).addClass("green");
+                $(".key-white").on("mouseover", function () {
+                    $(this).addClass("green");
+                });
+            }).on("mouseup", function () {
+                $(this).removeClass("green");
+                $(".key-white").off("mouseover");
+            }).on("mouseout", function () {
+                $(this).removeClass("green");
             });
 
+
+            $(".key-black button").on("mousedown", function () {
+                $(this).addClass("green");
+                $(".key-black button").on("mouseover", function () {
+                    $(this).addClass("green");
+                });
+            }).on("mouseup", function () {
+                $(this).removeClass("green");
+                $(".key-black button").off("mouseover");
+            }).on("mouseout", function () {
+                $(this).removeClass("green");
+            });
+
+            audio.addEventListener('canplaythrough', function (e) {
+                $.each(note.high, function (i, item) {
+                    var className = "green" + (item.isBlack ? " black" : "");
+                    var height = 6000 / item.speed * item.beat;
+                    var time = item.time * 100 * 2;
+                    $(".waterfall").append('<div class="' + className + '" style="height: ' + height * 2 + 'px; bottom: ' + time + 'px;left: calc(100% / 52 * ' + item.noteIndex + ')">' + item.note + '</div>');
+                    //琴键亮
+                    //key(item,"green");
+                });
+                $.each(note.low, function (i, item) {
+                    var className = "blue" + (item.isBlack ? " black" : "");
+                    var height = 6000 / item.speed * item.beat;
+                    var time = item.time * 100 * 2;
+                    $(".waterfall").append('<div class="' + className + '" style="height: ' + height + 'px; bottom: ' + time + 'px;left: calc(100% / 52 * ' + item.noteIndex + ')">' + item.note + '</div>');
+                    //琴键亮
+                    //key(item, "blue");
+                });
+                $(".icon").click();
+            }, false);            
         });
     </script>
 </body>
