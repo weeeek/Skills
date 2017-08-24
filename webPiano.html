@@ -374,7 +374,7 @@
             </div>
         </div>
         <div class="audio-music">
-            <audio src="张语格 - 天黑日记.mp3"></audio>
+            <audio id="audio" src="张语格 - 天黑日记.mp3" controls=""></audio>
             <div class="audio-lyrics">
                 <ul class="pause">
                     <li class="lrc-sentence"><a href="https://imgsa.baidu.com/forum/pic/item/5da39c3433fa828b41e51afdf71f4134960a5a0d.jpg" target="_blank" title="《天黑日记》简谱">天黑日记</a></li>
@@ -432,7 +432,9 @@
             </div>
         </div>
     </div>
-    <div class="blur"></div>
+    <div class="blur">
+        <canvas id="canvas" width="800" height="350"></canvas>
+    </div>
     <div class="fall">
         <!--160速度，1拍=37.5px-->
         <div class="waterfall pause"></div>
@@ -566,7 +568,7 @@
             }, item.time * 1000 + item.beat * 60000 / item.speed);
         }
 
-        var audio = document.getElementsByTagName('audio')[0];
+        var audio = document.getElementById('audio');
         //160速度，1拍0.375s
         //120速度，1拍0.5s
         var note = {
@@ -574,657 +576,661 @@
             speed: "160",
             beat: 4,
             bar: 4,
-            high: [{
-                noteSimple: "1",
-                beat: 1,
-                speed: 160,
-                note: "Eb6",
-                va: 2,
-                time: 3.25,
-                noteIndex: 39,
-                isBlack: true
-            }, {
-                noteSimple: "5",
-                beat: 1,
-                speed: 160,
-                note: "Bb5",
-                va: 1,
-                time: 3.25 + 0.375 * 1,
-                noteIndex: 36,
-                isBlack: true
-            }, {
-                noteSimple: "1",
-                beat: 1,
-                speed: 160,
-                note: "Eb6",
-                va: 2,
-                time: 3.25 + 0.375 * 2,
-                noteIndex: 39,
-                isBlack: true
-            }, {
-                noteSimple: "5",
-                beat: 1,
-                speed: 160,
-                note: "Bb5",
-                va: 1,
-                time: 3.25 + 0.375 * 3,
-                noteIndex: 36,
-                isBlack: true
-            }, {
-                noteSimple: "7",
-                beat: 1,
-                speed: 160,
-                note: "D6",
-                va: 1,
-                time: 3.25 + 0.375 * 4,
-                noteIndex: 38,
-                isBlack: false
-            }, {
-                noteSimple: "5",
-                beat: 1,
-                speed: 160,
-                note: "Bb5",
-                va: 1,
-                time: 3.25 + 0.375 * 5,
-                noteIndex: 36,
-                isBlack: true
-            }, {
-                noteSimple: "4",
-                beat: 1,
-                speed: 160,
-                note: "Db6",
-                va: 1,
-                time: 3.25 + 0.375 * 6,
-                noteIndex: 35,
-                isBlack: true
-            }, {
-                noteSimple: "5",
-                beat: 1,
-                speed: 160,
-                note: "Bb5",
-                va: 1,
-                time: 3.25 + 0.375 * 7,
-                noteIndex: 36,
-                isBlack: true
-            }, {
-                noteSimple: "1",
-                beat: 1,
-                speed: 160,
-                note: "Eb6",
-                va: 2,
-                time: 3.25 + 0.375 * 8,
-                noteIndex: 39,
-                isBlack: true
-            }, {
-                noteSimple: "3",
-                beat: 1,
-                speed: 160,
-                note: "G5",
-                va: 1,
-                time: 3.25 + 0.375 * 9,
-                noteIndex: 34,
-                isBlack: false
-            }, {
-                noteSimple: "6",
-                beat: 1,
-                speed: 160,
-                note: "C6",
-                va: 1,
-                time: 3.25 + 0.375 * 10,
-                noteIndex: 37,
-                isBlack: false
-            }, {
-                noteSimple: "3",
-                beat: 1,
-                speed: 160,
-                note: "G5",
-                va: 1,
-                time: 3.25 + 0.375 * 11,
-                noteIndex: 34,
-                isBlack: false
-            }, {
-                noteSimple: "5",
-                beat: 1,
-                speed: 160,
-                note: "Bb6",
-                va: 2,
-                time: 3.25 + 0.375 * 12,
-                noteIndex: 36,
-                isBlack: true
-            }, {
-                noteSimple: "3",
-                beat: 1,
-                speed: 160,
-                note: "G5",
-                va: 1,
-                time: 3.25 + 0.375 * 13,
-                noteIndex: 34,
-                isBlack: false
-            }, {
-                noteSimple: "7",
-                beat: 1,
-                speed: 160,
-                note: "D6",
-                va: 1,
-                time: 3.25 + 0.375 * 14,
-                noteIndex: 38,
-                isBlack: false
-            }, {
-                noteSimple: "3",
-                beat: 1,
-                speed: 160,
-                note: "G5",
-                va: 1,
-                time: 3.25 + 0.375 * 15,
-                noteIndex: 34,
-                isBlack: false
-            }, {
-                noteSimple: "4",
-                beat: 1,
-                speed: 160,
-                note: "Ab5",
-                va: 1,
-                time: 3.25 + 0.375 * 16,
-                noteIndex: 36,
-                isBlack: true
-            }, {
-                noteSimple: "1",
-                beat: 1,
-                speed: 160,
-                note: "Eb6",
-                va: 2,
-                time: 3.25 + 0.375 * 17,
-                noteIndex: 39,
-                isBlack: true
-            }, {
-                noteSimple: "7",
-                beat: 1,
-                speed: 160,
-                note: "D6",
-                va: 1,
-                time: 3.25 + 0.375 * 18,
-                noteIndex: 38,
-                isBlack: false
-            }, {
-                noteSimple: "1",
-                beat: 1,
-                speed: 160,
-                note: "Eb6",
-                va: 2,
-                time: 3.25 + 0.375 * 19,
-                noteIndex: 39,
-                isBlack: true
-            }, {
-                noteSimple: "1",
-                beat: 1,
-                speed: 160,
-                note: "Eb6",
-                va: 2,
-                time: 3.25 + 0.375 * 20,
-                noteIndex: 39,
-                isBlack: true
-            }, {
-                noteSimple: "2",
-                beat: 1,
-                speed: 160,
-                note: "F5",
-                va: 1,
-                time: 3.25 + 0.375 * 21,
-                noteIndex: 33,
-                isBlack: false
-            }, {
-                noteSimple: "7",
-                beat: 1,
-                speed: 160,
-                note: "D6",
-                va: 1,
-                time: 3.25 + 0.375 * 22,
-                noteIndex: 38,
-                isBlack: false
-            }, {
-                noteSimple: "2",
-                beat: 1,
-                speed: 160,
-                note: "F5",
-                va: 1,
-                time: 3.25 + 0.375 * 23,
-                noteIndex: 33,
-                isBlack: false
-            }, {
-                noteSimple: "1",
-                beat: 1,
-                speed: 160,
-                note: "Eb6",
-                va: 2,
-                time: 3.25 + 0.375 * 24,
-                noteIndex: 39,
-                isBlack: true
-            }, {
-                noteSimple: "5",
-                beat: 1,
-                speed: 160,
-                note: "Bb5",
-                va: 1,
-                time: 3.25 + 0.375 * 25,
-                noteIndex: 36,
-                isBlack: false
-            }, {
-                noteSimple: "3",
-                beat: 1,
-                speed: 160,
-                note: "G5",
-                va: 1,
-                time: 3.25 + 0.375 * 26,
-                noteIndex: 39,
-                isBlack: true
-            }, {
-                noteSimple: "5",
-                beat: 1,
-                speed: 160,
-                note: "Bb5",
-                va: 1,
-                time: 3.25 + 0.375 * 27,
-                noteIndex: 36,
-                isBlack: true
-            }, {
-                noteSimple: "5",
-                beat: 1,
-                speed: 120,
-                note: "Bb5",
-                va: 1,
-                time: 16.75,
-                noteIndex: 36,
-                isBlack: true
-            }, {
-                noteSimple: "4",
-                beat: 1,
-                speed: 120,
-                note: "Ab5",
-                va: 1,
-                time: 16.75 + 0.5 * 1,
-                noteIndex: 35,
-                isBlack: true
-            }, {
-                noteSimple: "3",
-                beat: 2,
-                speed: 120,
-                note: "G5",
-                va: 1,
-                time: 16.75 + 0.5 * 2,
-                noteIndex: 34,
-                isBlack: false
-            }, {
-                noteSimple: "4",
-                beat: 1,
-                speed: 120,
-                note: "Ab5",
-                va: 1,
-                time: 16.75 + 0.5 * 4,
-                noteIndex: 35,
-                isBlack: true
-            }, {
-                noteSimple: "3",
-                beat: 1,
-                speed: 120,
-                note: "G5",
-                va: 1,
-                time: 16.75 + 0.5 * 5,
-                noteIndex: 34,
-                isBlack: false
-            }, {
-                noteSimple: "2",
-                beat: 2,
-                speed: 120,
-                note: "F5",
-                va: 1,
-                time: 16.75 + 0.5 * 6,
-                noteIndex: 33,
-                isBlack: false
-            }, {
-                noteSimple: "3",
-                beat: 0.5,
-                speed: 120,
-                note: "G5",
-                va: 1,
-                time: 16.75 + 0.5 * 8,
-                noteIndex: 34,
-                isBlack: false
-            }, {
-                noteSimple: "2",
-                beat: 0.125,
-                speed: 120,
-                note: "F5",
-                va: 1,
-                time: 16.75 + 0.5 * 8.5,
-                noteIndex: 33,
-                isBlack: false
-            }, {
-                noteSimple: "3",
-                beat: 0.125,
-                speed: 120,
-                note: "G5",
-                va: 1,
-                time: 16.75 + 0.5 * 8.625,
-                noteIndex: 34,
-                isBlack: false
-            }, {
-                noteSimple: "2",
-                beat: 0.25,
-                speed: 120,
-                note: "F5",
-                va: 1,
-                time: 16.75 + 0.5 * 8.75,
-                noteIndex: 33,
-                isBlack: false
-            }, {
-                noteSimple: "1",
-                beat: 0.5,
-                speed: 120,
-                note: "Eb5",
-                va: 1,
-                time: 16.75 + 0.5 * 9,
-                noteIndex: 32,
-                isBlack: false
-            }, {
-                noteSimple: "7",
-                beat: 0.5,
-                speed: 120,
-                note: "D5",
-                va: 0,
-                time: 16.75 + 0.5 * 9.5,
-                noteIndex: 31,
-                isBlack: false
-            }, {
-                noteSimple: "1",
-                beat: 1,
-                speed: 120,
-                note: "Eb5",
-                va: 1,
-                time: 16.75 + 0.5 * 10,
-                noteIndex: 32,
-                isBlack: true
-            }, {
-                noteSimple: "1",
-                beat: 0.25,
-                speed: 120,
-                note: "Eb5",
-                va: 1,
-                time: 16.75 + 0.5 * 11,
-                noteIndex: 32,
-                isBlack: true
-            }, {
-                noteSimple: "2",
-                beat: 0.25,
-                speed: 120,
-                note: "F5",
-                va: 1,
-                time: 16.75 + 0.5 * 11.25,
-                noteIndex: 33,
-                isBlack: false
-            }, {
-                noteSimple: "3",
-                beat: 0.25,
-                speed: 120,
-                note: "G5",
-                va: 1,
-                time: 16.75 + 0.5 * 11.5,
-                noteIndex: 34,
-                isBlack: false
-            }, {
-                noteSimple: "4",
-                beat: 0.25,
-                speed: 120,
-                note: "Ab5",
-                va: 1,
-                time: 16.75 + 0.5 * 11.75,
-                noteIndex: 35,
-                isBlack: true
-            }, {
-                noteSimple: "5",
-                beat: 0.25,
-                speed: 120,
-                note: "Bb5",
-                va: 1,
-                time: 16.75 + 0.5 * 12,
-                noteIndex: 36,
-                isBlack: true
-            }, {
-                noteSimple: "6",
-                beat: 0.25,
-                speed: 120,
-                note: "F5",
-                va: 1,
-                time: 16.75 + 0.5 * 12.25,
-                noteIndex: 37,
-                isBlack: false
-            }, {
-                noteSimple: "5",
-                beat: 0.25,
-                speed: 120,
-                note: "Bb5",
-                va: 1,
-                time: 16.75 + 0.5 * 12.5,
-                noteIndex: 36,
-                isBlack: true
-            }, {
-                noteSimple: "4",
-                beat: 0.25,
-                speed: 120,
-                note: "Ab5",
-                va: 1,
-                time: 16.75 + 0.5 * 12.75,
-                noteIndex: 35,
-                isBlack: true
-            }, {
-                noteSimple: "3",
-                beat: 0.25,
-                speed: 120,
-                note: "G5",
-                va: 1,
-                time: 16.75 + 0.5 * 13,
-                noteIndex: 34,
-                isBlack: false
-            }, {
-                noteSimple: "2",
-                beat: 0.25,
-                speed: 120,
-                note: "F5",
-                va: 1,
-                time: 16.75 + 0.5 * 13.25,
-                noteIndex: 33,
-                isBlack: false
-            }, {
-                noteSimple: "1",
-                beat: 0.25,
-                speed: 120,
-                note: "Eb5",
-                va: 1,
-                time: 16.75 + 0.5 * 13.5,
-                noteIndex: 32,
-                isBlack: true
-            }, {
-                noteSimple: "2",
-                beat: 0.25,
-                speed: 120,
-                note: "F5",
-                va: 1,
-                time: 16.75 + 0.5 * 13.75,
-                noteIndex: 33,
-                isBlack: false
-            }, {
-                noteSimple: "7",
-                beat: 2,
-                speed: 120,
-                note: "D4",
-                va: 0,
-                time: 16.75 + 0.5 * 14,
-                noteIndex: 31,
-                isBlack: false
-            }, {
-                noteSimple: "1",
-                beat: 0.5,
-                speed: 120,
-                note: "Eb5",
-                va: 1,
-                time: 16.75 + 0.5 * 16,
-                noteIndex: 32,
-                isBlack: true
-            }, {
-                noteSimple: "7",
-                beat: 0.125,
-                speed: 120,
-                note: "D4",
-                va: 0,
-                time: 16.75 + 0.5 * 16.5,
-                noteIndex: 31,
-                isBlack: false
-            }, {
-                noteSimple: "1",
-                beat: 0.125,
-                speed: 120,
-                note: "Eb5",
-                va: 1,
-                time: 16.75 + 0.5 * 16.625,
-                noteIndex: 32,
-                isBlack: true
-            }, {
-                noteSimple: "7",
-                beat: 0.25,
-                speed: 120,
-                note: "D4",
-                va: 0,
-                time: 16.75 + 0.5 * 16.75,
-                noteIndex: 31,
-                isBlack: false
-            }, {
-                noteSimple: "6",
-                beat: 0.25,
-                speed: 120,
-                note: "C4",
-                va: 0,
-                time: 16.75 + 0.5 * 17,
-                noteIndex: 30,
-                isBlack: false
-            }, {
-                noteSimple: "5",
-                beat: 0.25,
-                speed: 120,
-                note: "Bb4",
-                va: 0,
-                time: 16.75 + 0.5 * 17.25,
-                noteIndex: 29,
-                isBlack: false
-            }],
+            high: [
+                {
+                    noteSimple: "1",
+                    beat: 1,
+                    speed: 160,
+                    note: "Eb6",
+                    va: 2,
+                    time: 3.25,
+                    noteIndex: 39,
+                    isBlack: true
+                }, {
+                    noteSimple: "5",
+                    beat: 1,
+                    speed: 160,
+                    note: "Bb5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 1,
+                    noteIndex: 36,
+                    isBlack: true
+                }, {
+                    noteSimple: "1",
+                    beat: 1,
+                    speed: 160,
+                    note: "Eb6",
+                    va: 2,
+                    time: 3.25 + 0.375 * 2,
+                    noteIndex: 39,
+                    isBlack: true
+                }, {
+                    noteSimple: "5",
+                    beat: 1,
+                    speed: 160,
+                    note: "Bb5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 3,
+                    noteIndex: 36,
+                    isBlack: true
+                }, {
+                    noteSimple: "7",
+                    beat: 1,
+                    speed: 160,
+                    note: "D6",
+                    va: 1,
+                    time: 3.25 + 0.375 * 4,
+                    noteIndex: 38,
+                    isBlack: false
+                }, {
+                    noteSimple: "5",
+                    beat: 1,
+                    speed: 160,
+                    note: "Bb5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 5,
+                    noteIndex: 36,
+                    isBlack: true
+                }, {
+                    noteSimple: "4",
+                    beat: 1,
+                    speed: 160,
+                    note: "Db6",
+                    va: 1,
+                    time: 3.25 + 0.375 * 6,
+                    noteIndex: 35,
+                    isBlack: true
+                }, {
+                    noteSimple: "5",
+                    beat: 1,
+                    speed: 160,
+                    note: "Bb5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 7,
+                    noteIndex: 36,
+                    isBlack: true
+                }, {
+                    noteSimple: "1",
+                    beat: 1,
+                    speed: 160,
+                    note: "Eb6",
+                    va: 2,
+                    time: 3.25 + 0.375 * 8,
+                    noteIndex: 39,
+                    isBlack: true
+                }, {
+                    noteSimple: "3",
+                    beat: 1,
+                    speed: 160,
+                    note: "G5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 9,
+                    noteIndex: 34,
+                    isBlack: false
+                }, {
+                    noteSimple: "6",
+                    beat: 1,
+                    speed: 160,
+                    note: "C6",
+                    va: 1,
+                    time: 3.25 + 0.375 * 10,
+                    noteIndex: 37,
+                    isBlack: false
+                }, {
+                    noteSimple: "3",
+                    beat: 1,
+                    speed: 160,
+                    note: "G5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 11,
+                    noteIndex: 34,
+                    isBlack: false
+                }, {
+                    noteSimple: "5",
+                    beat: 1,
+                    speed: 160,
+                    note: "Bb6",
+                    va: 2,
+                    time: 3.25 + 0.375 * 12,
+                    noteIndex: 36,
+                    isBlack: true
+                }, {
+                    noteSimple: "3",
+                    beat: 1,
+                    speed: 160,
+                    note: "G5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 13,
+                    noteIndex: 34,
+                    isBlack: false
+                }, {
+                    noteSimple: "7",
+                    beat: 1,
+                    speed: 160,
+                    note: "D6",
+                    va: 1,
+                    time: 3.25 + 0.375 * 14,
+                    noteIndex: 38,
+                    isBlack: false
+                }, {
+                    noteSimple: "3",
+                    beat: 1,
+                    speed: 160,
+                    note: "G5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 15,
+                    noteIndex: 34,
+                    isBlack: false
+                }, {
+                    noteSimple: "4",
+                    beat: 1,
+                    speed: 160,
+                    note: "Ab5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 16,
+                    noteIndex: 36,
+                    isBlack: true
+                }, {
+                    noteSimple: "1",
+                    beat: 1,
+                    speed: 160,
+                    note: "Eb6",
+                    va: 2,
+                    time: 3.25 + 0.375 * 17,
+                    noteIndex: 39,
+                    isBlack: true
+                }, {
+                    noteSimple: "7",
+                    beat: 1,
+                    speed: 160,
+                    note: "D6",
+                    va: 1,
+                    time: 3.25 + 0.375 * 18,
+                    noteIndex: 38,
+                    isBlack: false
+                }, {
+                    noteSimple: "1",
+                    beat: 1,
+                    speed: 160,
+                    note: "Eb6",
+                    va: 2,
+                    time: 3.25 + 0.375 * 19,
+                    noteIndex: 39,
+                    isBlack: true
+                }, {
+                    noteSimple: "1",
+                    beat: 1,
+                    speed: 160,
+                    note: "Eb6",
+                    va: 2,
+                    time: 3.25 + 0.375 * 20,
+                    noteIndex: 39,
+                    isBlack: true
+                }, {
+                    noteSimple: "2",
+                    beat: 1,
+                    speed: 160,
+                    note: "F5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 21,
+                    noteIndex: 33,
+                    isBlack: false
+                }, {
+                    noteSimple: "7",
+                    beat: 1,
+                    speed: 160,
+                    note: "D6",
+                    va: 1,
+                    time: 3.25 + 0.375 * 22,
+                    noteIndex: 38,
+                    isBlack: false
+                }, {
+                    noteSimple: "2",
+                    beat: 1,
+                    speed: 160,
+                    note: "F5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 23,
+                    noteIndex: 33,
+                    isBlack: false
+                }, {
+                    noteSimple: "1",
+                    beat: 1,
+                    speed: 160,
+                    note: "Eb6",
+                    va: 2,
+                    time: 3.25 + 0.375 * 24,
+                    noteIndex: 39,
+                    isBlack: true
+                }, {
+                    noteSimple: "5",
+                    beat: 1,
+                    speed: 160,
+                    note: "Bb5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 25,
+                    noteIndex: 36,
+                    isBlack: false
+                }, {
+                    noteSimple: "3",
+                    beat: 1,
+                    speed: 160,
+                    note: "G5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 26,
+                    noteIndex: 39,
+                    isBlack: true
+                }, {
+                    noteSimple: "5",
+                    beat: 1,
+                    speed: 160,
+                    note: "Bb5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 27,
+                    noteIndex: 36,
+                    isBlack: true
+                }, {
+                    noteSimple: "5",
+                    beat: 1,
+                    speed: 120,
+                    note: "Bb5",
+                    va: 1,
+                    time: 16.75,
+                    noteIndex: 36,
+                    isBlack: true
+                }, {
+                    noteSimple: "4",
+                    beat: 1,
+                    speed: 120,
+                    note: "Ab5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 1,
+                    noteIndex: 35,
+                    isBlack: true
+                }, {
+                    noteSimple: "3",
+                    beat: 2,
+                    speed: 120,
+                    note: "G5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 2,
+                    noteIndex: 34,
+                    isBlack: false
+                }, {
+                    noteSimple: "4",
+                    beat: 1,
+                    speed: 120,
+                    note: "Ab5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 4,
+                    noteIndex: 35,
+                    isBlack: true
+                }, {
+                    noteSimple: "3",
+                    beat: 1,
+                    speed: 120,
+                    note: "G5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 5,
+                    noteIndex: 34,
+                    isBlack: false
+                }, {
+                    noteSimple: "2",
+                    beat: 2,
+                    speed: 120,
+                    note: "F5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 6,
+                    noteIndex: 33,
+                    isBlack: false
+                }, {
+                    noteSimple: "3",
+                    beat: 0.5,
+                    speed: 120,
+                    note: "G5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 8,
+                    noteIndex: 34,
+                    isBlack: false
+                }, {
+                    noteSimple: "2",
+                    beat: 0.125,
+                    speed: 120,
+                    note: "F5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 8.5,
+                    noteIndex: 33,
+                    isBlack: false
+                }, {
+                    noteSimple: "3",
+                    beat: 0.125,
+                    speed: 120,
+                    note: "G5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 8.625,
+                    noteIndex: 34,
+                    isBlack: false
+                }, {
+                    noteSimple: "2",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "F5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 8.75,
+                    noteIndex: 33,
+                    isBlack: false
+                }, {
+                    noteSimple: "1",
+                    beat: 0.5,
+                    speed: 120,
+                    note: "Eb5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 9,
+                    noteIndex: 32,
+                    isBlack: false
+                }, {
+                    noteSimple: "7",
+                    beat: 0.5,
+                    speed: 120,
+                    note: "D5",
+                    va: 0,
+                    time: 16.75 + 0.5 * 9.5,
+                    noteIndex: 31,
+                    isBlack: false
+                }, {
+                    noteSimple: "1",
+                    beat: 1,
+                    speed: 120,
+                    note: "Eb5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 10,
+                    noteIndex: 32,
+                    isBlack: true
+                }, {
+                    noteSimple: "1",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "Eb5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 11,
+                    noteIndex: 32,
+                    isBlack: true
+                }, {
+                    noteSimple: "2",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "F5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 11.25,
+                    noteIndex: 33,
+                    isBlack: false
+                }, {
+                    noteSimple: "3",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "G5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 11.5,
+                    noteIndex: 34,
+                    isBlack: false
+                }, {
+                    noteSimple: "4",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "Ab5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 11.75,
+                    noteIndex: 35,
+                    isBlack: true
+                }, {
+                    noteSimple: "5",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "Bb5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 12,
+                    noteIndex: 36,
+                    isBlack: true
+                }, {
+                    noteSimple: "6",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "F5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 12.25,
+                    noteIndex: 37,
+                    isBlack: false
+                }, {
+                    noteSimple: "5",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "Bb5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 12.5,
+                    noteIndex: 36,
+                    isBlack: true
+                }, {
+                    noteSimple: "4",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "Ab5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 12.75,
+                    noteIndex: 35,
+                    isBlack: true
+                }, {
+                    noteSimple: "3",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "G5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 13,
+                    noteIndex: 34,
+                    isBlack: false
+                }, {
+                    noteSimple: "2",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "F5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 13.25,
+                    noteIndex: 33,
+                    isBlack: false
+                }, {
+                    noteSimple: "1",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "Eb5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 13.5,
+                    noteIndex: 32,
+                    isBlack: true
+                }, {
+                    noteSimple: "2",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "F5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 13.75,
+                    noteIndex: 33,
+                    isBlack: false
+                }, {
+                    noteSimple: "7",
+                    beat: 2,
+                    speed: 120,
+                    note: "D4",
+                    va: 0,
+                    time: 16.75 + 0.5 * 14,
+                    noteIndex: 31,
+                    isBlack: false
+                }, {
+                    noteSimple: "1",
+                    beat: 0.5,
+                    speed: 120,
+                    note: "Eb5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 16,
+                    noteIndex: 32,
+                    isBlack: true
+                }, {
+                    noteSimple: "7",
+                    beat: 0.125,
+                    speed: 120,
+                    note: "D4",
+                    va: 0,
+                    time: 16.75 + 0.5 * 16.5,
+                    noteIndex: 31,
+                    isBlack: false
+                }, {
+                    noteSimple: "1",
+                    beat: 0.125,
+                    speed: 120,
+                    note: "Eb5",
+                    va: 1,
+                    time: 16.75 + 0.5 * 16.625,
+                    noteIndex: 32,
+                    isBlack: true
+                }, {
+                    noteSimple: "7",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "D4",
+                    va: 0,
+                    time: 16.75 + 0.5 * 16.75,
+                    noteIndex: 31,
+                    isBlack: false
+                }, {
+                    noteSimple: "6",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "C4",
+                    va: 0,
+                    time: 16.75 + 0.5 * 17,
+                    noteIndex: 30,
+                    isBlack: false
+                }, {
+                    noteSimple: "5",
+                    beat: 0.25,
+                    speed: 120,
+                    note: "Bb4",
+                    va: 0,
+                    time: 16.75 + 0.5 * 17.25,
+                    noteIndex: 29,
+                    isBlack: false
+                }
+            ],
 
-            low: [{
-                noteSimple: "1",
-                beat: 2,
-                speed: 160,
-                note: "Eb6",
-                va: 1,
-                time: 3.25,
-                noteIndex: 32,
-                isBlack: true
-            }, {
-                noteSimple: "3",
-                beat: 2,
-                speed: 160,
-                note: "G6",
-                va: 1,
-                time: 3.25 + 0.375 * 2,
-                noteIndex: 34,
-                isBlack: false
-            }, {
-                noteSimple: "7",
-                beat: 2,
-                speed: 160,
-                note: "D5",
-                va: 0,
-                time: 3.25 + 0.375 * 4,
-                noteIndex: 31,
-                isBlack: true
-            }, {
-                noteSimple: "2",
-                beat: 2,
-                speed: 160,
-                note: "F5",
-                va: 1,
-                time: 3.25 + 0.375 * 6,
-                noteIndex: 33,
-                isBlack: false
-            }, {
-                noteSimple: "6",
-                beat: 2,
-                speed: 160,
-                note: "C5",
-                va: 0,
-                time: 3.25 + 0.375 * 8,
-                noteIndex: 30,
-                isBlack: false
-            }, {
-                noteSimple: "1",
-                beat: 2,
-                speed: 160,
-                note: "Eb5",
-                va: 1,
-                time: 3.25 + 0.375 * 10,
-                noteIndex: 32,
-                isBlack: true
-            }, {
-                noteSimple: "5",
-                beat: 2,
-                speed: 160,
-                note: "Bb5",
-                va: 0,
-                time: 3.25 + 0.375 * 12,
-                noteIndex: 29,
-                isBlack: true
-            }, {
-                noteSimple: "7",
-                beat: 2,
-                speed: 160,
-                note: "D5",
-                va: 1,
-                time: 3.25 + 0.375 * 14,
-                noteIndex: 31,
-                isBlack: false
-            }, {
-                noteSimple: "4",
-                beat: 2,
-                speed: 160,
-                note: "Ab5",
-                va: 0,
-                time: 3.25 + 0.375 * 16,
-                noteIndex: 28,
-                isBlack: true
-            }, {
-                noteSimple: "6",
-                beat: 2,
-                speed: 160,
-                note: "C5",
-                va: 1,
-                time: 3.25 + 0.375 * 18,
-                noteIndex: 30,
-                isBlack: false
-            }, {
-                noteSimple: "5",
-                beat: 2,
-                speed: 160,
-                note: "Bb5",
-                va: 0,
-                time: 3.25 + 0.375 * 20,
-                noteIndex: 29,
-                isBlack: true
-            }, {
-                noteSimple: "7",
-                beat: 2,
-                speed: 160,
-                note: "D5",
-                va: 1,
-                time: 3.25 + 0.375 * 22,
-                noteIndex: 31,
-                isBlack: false
-            }]
+            low: [
+                {
+                    noteSimple: "1",
+                    beat: 2,
+                    speed: 160,
+                    note: "Eb6",
+                    va: 1,
+                    time: 3.25,
+                    noteIndex: 32,
+                    isBlack: true
+                }, {
+                    noteSimple: "3",
+                    beat: 2,
+                    speed: 160,
+                    note: "G6",
+                    va: 1,
+                    time: 3.25 + 0.375 * 2,
+                    noteIndex: 34,
+                    isBlack: false
+                }, {
+                    noteSimple: "7",
+                    beat: 2,
+                    speed: 160,
+                    note: "D5",
+                    va: 0,
+                    time: 3.25 + 0.375 * 4,
+                    noteIndex: 31,
+                    isBlack: true
+                }, {
+                    noteSimple: "2",
+                    beat: 2,
+                    speed: 160,
+                    note: "F5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 6,
+                    noteIndex: 33,
+                    isBlack: false
+                }, {
+                    noteSimple: "6",
+                    beat: 2,
+                    speed: 160,
+                    note: "C5",
+                    va: 0,
+                    time: 3.25 + 0.375 * 8,
+                    noteIndex: 30,
+                    isBlack: false
+                }, {
+                    noteSimple: "1",
+                    beat: 2,
+                    speed: 160,
+                    note: "Eb5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 10,
+                    noteIndex: 32,
+                    isBlack: true
+                }, {
+                    noteSimple: "5",
+                    beat: 2,
+                    speed: 160,
+                    note: "Bb5",
+                    va: 0,
+                    time: 3.25 + 0.375 * 12,
+                    noteIndex: 29,
+                    isBlack: true
+                }, {
+                    noteSimple: "7",
+                    beat: 2,
+                    speed: 160,
+                    note: "D5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 14,
+                    noteIndex: 31,
+                    isBlack: false
+                }, {
+                    noteSimple: "4",
+                    beat: 2,
+                    speed: 160,
+                    note: "Ab5",
+                    va: 0,
+                    time: 3.25 + 0.375 * 16,
+                    noteIndex: 28,
+                    isBlack: true
+                }, {
+                    noteSimple: "6",
+                    beat: 2,
+                    speed: 160,
+                    note: "C5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 18,
+                    noteIndex: 30,
+                    isBlack: false
+                }, {
+                    noteSimple: "5",
+                    beat: 2,
+                    speed: 160,
+                    note: "Bb5",
+                    va: 0,
+                    time: 3.25 + 0.375 * 20,
+                    noteIndex: 29,
+                    isBlack: true
+                }, {
+                    noteSimple: "7",
+                    beat: 2,
+                    speed: 160,
+                    note: "D5",
+                    va: 1,
+                    time: 3.25 + 0.375 * 22,
+                    noteIndex: 31,
+                    isBlack: false
+                }
+            ]
         }
 
         $(function () {
@@ -1239,8 +1245,7 @@
                 $(".icon").toggleClass("play");
                 if (audio.paused) {
                     audio.play();
-                }
-                else {
+                } else {
                     audio.pause();
                 }
             });
@@ -1287,26 +1292,104 @@
                 $(this).removeClass("green");
             });
 
+            $.each(note.high, function (i, item) {
+                var className = "green" + (item.isBlack ? " black" : "");
+                var height = 6000 / item.speed * item.beat;
+                var time = item.time * 100 * 2;
+                $(".waterfall").append('<div class="' + className + '" style="height: ' + height * 2 + 'px; bottom: ' + time + 'px;left: calc(100% / 52 * ' + item.noteIndex + ')">' + item.note + '</div>');
+                //琴键亮
+                //key(item,"green");
+            });
+            $.each(note.low, function (i, item) {
+                var className = "blue" + (item.isBlack ? " black" : "");
+                var height = 6000 / item.speed * item.beat;
+                var time = item.time * 100 * 2;
+                $(".waterfall").append('<div class="' + className + '" style="height: ' + height + 'px; bottom: ' + time + 'px;left: calc(100% / 52 * ' + item.noteIndex + ')">' + item.note + '</div>');
+                //琴键亮
+                //key(item, "blue");
+            });
             audio.addEventListener('canplaythrough', function (e) {
-                $.each(note.high, function (i, item) {
-                    var className = "green" + (item.isBlack ? " black" : "");
-                    var height = 6000 / item.speed * item.beat;
-                    var time = item.time * 100 * 2;
-                    $(".waterfall").append('<div class="' + className + '" style="height: ' + height * 2 + 'px; bottom: ' + time + 'px;left: calc(100% / 52 * ' + item.noteIndex + ')">' + item.note + '</div>');
-                    //琴键亮
-                    //key(item,"green");
-                });
-                $.each(note.low, function (i, item) {
-                    var className = "blue" + (item.isBlack ? " black" : "");
-                    var height = 6000 / item.speed * item.beat;
-                    var time = item.time * 100 * 2;
-                    $(".waterfall").append('<div class="' + className + '" style="height: ' + height + 'px; bottom: ' + time + 'px;left: calc(100% / 52 * ' + item.noteIndex + ')">' + item.note + '</div>');
-                    //琴键亮
-                    //key(item, "blue");
-                });
+                $(".waterfall").addClass("pause").css({ "animation-name": "fall", "animation-duration": "251.37s", "animation-timing-function": "linear" });
                 $(".icon").click();
-            }, false);            
+            }, false);
+
+            analys();
         });
+    </script>
+    <script type="text/javascript">
+        /* *
+     * audio visualizer with html5 audio element
+     *
+     * v0.1.0
+     *
+     * licenced under the MIT license
+     *
+     * see my related repos:
+     * - HTML5_Audio_Visualizer https://github.com/wayou/HTML5_Audio_Visualizer
+     * - 3D_Audio_Spectrum_VIsualizer https://github.com/wayou/3D_Audio_Spectrum_VIsualizer
+     * - selected https://github.com/wayou/selected
+     * - MeowmeowPlayer https://github.com/wayou/MeowmeowPlayer
+     *
+     * reference: http://www.patrick-wied.at/blog/how-to-create-audio-visualizations-with-javascript-html
+     */
+
+        window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
+
+        function analys() {
+            //var audio = document.getElementById('audio');
+            var ctx = new AudioContext();
+            var analyser = ctx.createAnalyser();
+            var audioSrc = ctx.createMediaElementSource(audio);
+            // we have to connect the MediaElementSource with the analyser
+            audioSrc.connect(analyser);
+            analyser.connect(ctx.destination);
+            // we could configure the analyser: e.g. analyser.fftSize (for further infos read the spec)
+            // analyser.fftSize = 64;
+            // frequencyBinCount tells you how many values you'll receive from the analyser
+            var frequencyData = new Uint8Array(analyser.frequencyBinCount);
+
+            // we're ready to receive some data!
+            var canvas = document.getElementById('canvas'),
+                cwidth = canvas.width,
+                cheight = canvas.height - 2,
+                meterWidth = 10, //width of the meters in the spectrum
+                gap = 2, //gap between meters
+                capHeight = 2,
+                capStyle = '#fff',
+                meterNum = 800 / (10 + 2), //count of the meters
+                capYPositionArray = []; ////store the vertical position of hte caps for the preivous frame
+            ctx = canvas.getContext('2d'),
+            gradient = ctx.createLinearGradient(0, 0, 0, 300);
+            gradient.addColorStop(1, '#0f0');
+            gradient.addColorStop(0.5, '#ff0');
+            gradient.addColorStop(0, '#f00');
+            // loop
+            function renderFrame() {
+                var array = new Uint8Array(analyser.frequencyBinCount);
+                analyser.getByteFrequencyData(array);
+                var step = Math.round(array.length / meterNum); //sample limited data from the total array
+                ctx.clearRect(0, 0, cwidth, cheight);
+                for (var i = 0; i < meterNum; i++) {
+                    var value = array[i * step];
+                    if (capYPositionArray.length < Math.round(meterNum)) {
+                        capYPositionArray.push(value);
+                    };
+                    ctx.fillStyle = capStyle;
+                    //draw the cap, with transition effect
+                    if (value < capYPositionArray[i]) {
+                        ctx.fillRect(i * 12, cheight - (--capYPositionArray[i]), meterWidth, capHeight);
+                    } else {
+                        ctx.fillRect(i * 12, cheight - value, meterWidth, capHeight);
+                        capYPositionArray[i] = value;
+                    };
+                    ctx.fillStyle = gradient; //set the filllStyle to gradient for a better look
+                    ctx.fillRect(i * 12 /*meterWidth+gap*/, cheight - value + capHeight, meterWidth, cheight); //the meter
+                }
+                requestAnimationFrame(renderFrame);
+            }
+            renderFrame();
+            //audio.play();
+        };
     </script>
 </body>
 </html>
