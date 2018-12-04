@@ -1,0 +1,281 @@
+.tooltip-theme-dark, [tooltip]::after {
+  color: #fff;
+  background-color: #313131;
+}
+
+.tooltip-theme-light, [tooltip][effect="light"]::after {
+  color: #313131;
+  background-color: #fff;
+  border: 1px solid #313131;
+}
+
+.triangle-theme-dark, [tooltip]::before {
+  border-top-color: #313131;
+}
+
+.triangle-theme-light, [tooltip][effect="light"]::before {
+  border-top-color: #313131;
+}
+
+.tooltip-placement-top, [placement="top"]::after, :not([placement])::after, [placement=""]::after {
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.tooltip-placement-top-right, [placement="top-right"]::after {
+  bottom: calc(100% + 10px);
+  left: 100%;
+  transform: translate(-100%, 0);
+}
+
+.tooltip-placement-top-left, [placement="top-left"]::after {
+  bottom: calc(100% + 10px);
+  left: 0;
+  transform: translate(0, 0);
+}
+
+.tooltip-placement-right, [placement="right"]::after {
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.tooltip-placement-right-top, [placement="right-top"]::after {
+  left: calc(100% + 10px);
+  top: 0;
+  transform: translate(0, 0);
+}
+
+.tooltip-placement-right-bottom, [placement="right-bottom"]::after {
+  left: calc(100% + 10px);
+  top: 100%;
+  transform: translate(0, -100%);
+}
+
+.tooltip-placement-bottom, [placement="bottom"]::after {
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.tooltip-placement-bottom-right, [placement="bottom-right"]::after {
+  top: calc(100% + 10px);
+  left: 100%;
+  transform: translate(-100%, 0);
+}
+
+.tooltip-placement-bottom-left, [placement="bottom-left"]::after {
+  top: calc(100% + 10px);
+  left: 0;
+  transform: translate(0, 0);
+}
+
+.tooltip-placement-left, [placement="left"]::after {
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.tooltip-placement-left-top, [placement="left-top"]::after {
+  right: calc(100% + 10px);
+  top: 0;
+  transform: translate(0, 0);
+}
+
+.tooltip-placement-left-bottom, [placement="left-bottom"]::after {
+  right: calc(100% + 10px);
+  top: 100%;
+  transform: translate(0, -100%);
+}
+
+.triangle-placement-top, [placement="top"]::before, :not([placement])::before, [placement=""]::before {
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.triangle-placement-top-left, [placement="top-left"]::before {
+  bottom: calc(100% + 5px);
+  left: 10px;
+}
+
+.triangle-placement-top-right, [placement="top-right"]::before {
+  bottom: calc(100% + 5px);
+  right: 10px;
+}
+
+.triangle-placement-right, [placement="right"]::before, .triangle-placement-right-top, [placement="right-top"]::before, .triangle-placement-right-bottom, [placement="right-bottom"]::before {
+  left: calc(100% + 3px);
+  top: 50%;
+  transform: translate(0, -50%) rotateZ(90deg);
+}
+
+.triangle-placement-right-top, [placement="right-top"]::before {
+  top: 10px;
+}
+
+.triangle-placement-right-bottom, [placement="right-bottom"]::before {
+  bottom: 10px;
+  top: auto;
+  transform: translate(0, 0) rotateZ(90deg);
+}
+
+.triangle-placement-bottom, [placement="bottom"]::before, .triangle-placement-bottom-left, [placement="bottom-left"]::before, .triangle-placement-bottom-right, [placement="bottom-right"]::before {
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translate(-50%, 0) rotateZ(180deg);
+}
+
+.triangle-placement-bottom-left, [placement="bottom-left"]::before {
+  transform: translate(0, 0) rotateZ(180deg);
+  left: 10px;
+}
+
+.triangle-placement-bottom-right, [placement="bottom-right"]::before {
+  right: 10px;
+  left: auto;
+}
+
+.triangle-placement-left, [placement="left"]::before, .triangle-placement-left-top, [placement="left-top"]::before, .triangle-placement-left-bottom, [placement="left-bottom"]::before {
+  right: calc(100% + 3px);
+  top: 50%;
+  transform: translate(0, -50%) rotateZ(270deg);
+}
+
+.triangle-placement-left-top, [placement="left-top"]::before {
+  top: 10px;
+}
+
+.triangle-placement-left-bottom, [placement="left-bottom"]::before {
+  bottom: 10px;
+  top: auto;
+  transform: translate(0, 0) rotateZ(270deg);
+}
+
+@keyframes anime-top {
+  from {
+    opacity: .5;
+    bottom: 150%;
+  }
+}
+
+@keyframes anime-bottom {
+  from {
+    opacity: .5;
+    top: 150%;
+  }
+}
+
+@keyframes anime-left {
+  from {
+    opacity: .5;
+    right: 150%;
+  }
+}
+
+@keyframes anime-right {
+  from {
+    opacity: .5;
+    left: 150%;
+  }
+}
+
+body, html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background-color: #87cefa;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 10px 20px;
+  width: 70px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  appearance: none;
+  outline: none;
+}
+
+button:hover {
+  color: #409eff;
+  border-color: #c6e2ff;
+  background-color: #ecf5ff;
+}
+
+.container {
+  width: 400px;
+  text-align: center;
+}
+
+.container .left {
+  width: 70px;
+  float: left;
+}
+
+.container .right {
+  width: 70px;
+  float: right;
+}
+
+.container .bottom {
+  clear: both;
+}
+
+[tooltip] {
+  position: relative;
+}
+
+[tooltip]::after {
+  display: none;
+  content: attr(tooltip);
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 8px 15px;
+  max-width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+[tooltip]::before {
+  display: none;
+  content: '';
+  position: absolute;
+  border: 5px solid transparent;
+  z-index: 100;
+}
+
+[tooltip]:hover::after {
+  display: block;
+}
+
+[tooltip]:hover::after {
+  display: block;
+}
+
+[placement^="top"]::after, [placement^="top"]::before {
+  animation: anime-top 300ms ease-out forwards;
+}
+
+[placement^="right"]::after, [placement^="right"]::before {
+  animation: anime-right 300ms ease-out forwards;
+}
+
+[placement^="bottom"]::after, [placement^="bottom"]::before {
+  animation: anime-bottom 300ms ease-out forwards;
+}
+
+[placement^="left"]::after, [placement^="left"]::before {
+  animation: anime-left 300ms ease-out forwards;
+}

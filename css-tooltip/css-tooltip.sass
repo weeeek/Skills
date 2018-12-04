@@ -1,0 +1,238 @@
+﻿$white: #fff 
+$black: #313131     
+.tooltip-theme-dark 
+    color: $white
+    background-color: $black
+.tooltip-theme-light 
+    color: $black
+    background-color: $white
+    border: 1px solid $black
+.triangle-theme-dark 
+    border-top-color: $black
+.triangle-theme-light 
+    border-top-color: $black
+
+.tooltip-placement-top
+  bottom: calc(100% + 10px)
+  left: 50%
+  transform: translate(-50%, 0)
+
+
+.tooltip-placement-top-right
+  bottom: calc(100% + 10px)
+  left: 100%
+  transform: translate(-100%, 0)
+
+
+.tooltip-placement-top-left
+  bottom: calc(100% + 10px)
+  left: 0
+  transform: translate(0, 0)
+
+.tooltip-placement-right
+  left: calc(100% + 10px)
+  top: 50%
+  transform: translate(0, -50%)
+
+
+.tooltip-placement-right-top
+  left: calc(100% + 10px)
+  top: 0
+  transform: translate(0, 0)
+
+
+.tooltip-placement-right-bottom
+  left: calc(100% + 10px)
+  top: 100%
+  transform: translate(0, -100%)
+
+.tooltip-placement-bottom
+  top: calc(100% + 10px)
+  left: 50%
+  transform: translate(-50%, 0)
+
+.tooltip-placement-bottom-right
+  top: calc(100% + 10px)
+  left: 100%
+  transform: translate(-100%, 0)
+
+.tooltip-placement-bottom-left
+  top: calc(100% + 10px)
+  left: 0
+  transform: translate(0, 0)
+
+.tooltip-placement-left
+  right: calc(100% + 10px)
+  top: 50%
+  transform: translate(0, -50%)
+
+.tooltip-placement-left-top
+  right: calc(100% + 10px)
+  top: 0
+  transform: translate(0, 0)
+
+.tooltip-placement-left-bottom
+  right: calc(100% + 10px)
+  top: 100%
+  transform: translate(0, -100%)
+
+.triangle-placement-top
+  bottom: calc(100% + 5px)
+  left: 50%
+  transform: translate(-50%, 0)
+
+.triangle-placement-top-left
+  bottom: calc(100% + 5px)
+  left: 10px
+
+.triangle-placement-top-right
+  bottom: calc(100% + 5px)
+  right: 10px
+
+.triangle-placement-right, .triangle-placement-right-top,.triangle-placement-right-bottom
+  left: calc(100% + 3px)
+  top: 50%
+  transform: translate(0, -50%) rotateZ(90deg)
+
+.triangle-placement-right-top
+  top: 10px
+
+.triangle-placement-right-bottom
+  bottom: 10px
+  top: auto
+  transform: translate(0, 0) rotateZ(90deg)
+
+.triangle-placement-bottom, .triangle-placement-bottom-left, .triangle-placement-bottom-right
+  top: calc(100% + 5px)
+  left: 50%
+  transform: translate(-50%, 0) rotateZ(180deg)
+
+.triangle-placement-bottom-left
+  transform: translate(0, 0) rotateZ(180deg)
+  left: 10px
+
+.triangle-placement-bottom-right
+  right: 10px
+  left: auto
+  
+.triangle-placement-left,.triangle-placement-left-top, .triangle-placement-left-bottom
+  right: calc(100% + 3px)
+  top: 50%
+  transform: translate(0, -50%) rotateZ(270deg)
+
+.triangle-placement-left-top
+  top: 10px
+
+.triangle-placement-left-bottom
+  bottom: 10px
+  top: auto
+  transform: translate(0, 0) rotateZ(270deg)
+
+@keyframes anime-top 
+    from 
+        opacity: .5
+        bottom: 150%
+@keyframes anime-bottom 
+    from 
+        opacity: .5
+        top: 150%
+@keyframes anime-left
+    from 
+        opacity: .5
+        right: 150%
+@keyframes anime-right 
+    from 
+        opacity: .5
+        left: 150%
+
+
+
+body,html
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 0
+    margin: 0
+    height: 100vh
+    background-color: #87cefa
+
+button 
+    display: inline-block
+    border: none
+    padding: 10px 20px
+    width: 70px
+    margin-bottom: 10px
+    cursor: pointer
+    background-color: #fff
+    border: 1px solid #dcdfe6
+    border-radius: 4px
+    appearance: none
+    outline: none
+    &:hover 
+        color: #409eff
+        border-color: #c6e2ff
+        background-color: #ecf5ff
+.container
+    width: 400px
+    text-align: center
+    .left
+        width: 70px
+        float: left
+    .right
+        width: 70px
+        float: right
+    .bottom
+        clear: both
+[tooltip]
+    position: relative
+    &::after
+        display: none
+        content: attr(tooltip)
+        position: absolute
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        padding: 8px 15px
+        max-width: 200px
+        border-radius: 4px
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4)
+        z-index: 100
+        @extend .tooltip-theme-dark
+
+    &::before
+        display: none
+        content: ''
+        position: absolute
+        border: 5px solid transparent
+        z-index: 100
+        @extend .triangle-theme-dark
+    &:hover
+        &::after
+            display: block
+        &::after
+            display: block
+
+    &[effect="light"]
+        &::after
+            @extend .tooltip-theme-light
+        &::before
+            @extend .triangle-theme-light
+
+@each $placement in top,top-right,top-left, right,right-top,right-bottom, bottom,bottom-right,bottom-left, left,left-top,left-bottom 
+    &[placement="#{$placement}"] 
+        &::after 
+            @extend .tooltip-placement-#{$placement}
+        &::before 
+            @extend .triangle-placement-#{$placement}
+
+    &:not([placement]), &[placement=""] 
+        &::after 
+            @extend .tooltip-placement-top 
+        &::before 
+            @extend .triangle-placement-top
+@each $placement in top, right, bottom, left 
+    &[placement^="#{$placement}"] 
+        &::after, &::before 
+            animation: anime-#{$placement} 300ms ease-out forwards
+
+
