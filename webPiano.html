@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -233,11 +233,11 @@
             display: block !important;
         }
 
-        .playing .rotate-img {
+        .rotate-img {
             animation: rotate linear 10s infinite;
         }
 
-        .pause .rotate-img, .waterfall.pause, ul.pause, ul.pause li {
+        .rotate-img.pause, .waterfall.pause, ul.pause, ul.pause li {
             animation-play-state: paused;
         }
 
@@ -356,7 +356,7 @@
 <body>
     <div class="audio">
         <div class="audio-img">
-            <div class="rotate-img"></div>
+            <div class="rotate-img pause"></div>
             <div class="icon">
                 <div class="glyphicon glyphicon-play"></div>
                 <div class="glyphicon glyphicon-pause"></div>
@@ -427,9 +427,7 @@
                     <li class="lrc-sentence" style="animation-delay: 215s; animation-duration: 5s;">&nbsp;</li>
                 </ul>
             </div>
-            <div class="audio-operns">
-
-            </div>
+            <div class="audio-operns"></div>
         </div>
     </div>
     <div class="blur">
@@ -442,115 +440,158 @@
     <!--钢琴键88个-->
     <div class="piano">
         <div class="keys-white">
-            <button class="key-white"></button>
-            <button class="key-white"></button>
-            <button class="key-white key-c" key="C1"></button>
-            <button class="key-white key-c" key="D1"></button>
-            <button class="key-white key-c" key="E1"></button>
-            <button class="key-white key-c" key="F1"></button>
-            <button class="key-white key-c" key="G1"></button>
-            <button class="key-white key-c" key="A1"></button>
-            <button class="key-white key-c" key="B1"></button>
-            <button class="key-white key-c" key="C2"></button>
-            <button class="key-white key-c" key="D2"></button>
-            <button class="key-white key-c" key="E2"></button>
-            <button class="key-white key-c" key="F2"></button>
-            <button class="key-white key-c" key="G2"></button>
-            <button class="key-white key-c" key="A2"></button>
-            <button class="key-white key-c" key="B2"></button>
-            <button class="key-white key-c" key="C3"></button>
-            <button class="key-white key-c" key="D3"></button>
-            <button class="key-white key-c" key="E3"></button>
-            <button class="key-white key-c" key="F3"></button>
-            <button class="key-white key-c" key="G3"></button>
-            <button class="key-white key-c" key="A3"></button>
-            <button class="key-white key-c" key="B3"></button>
-            <button class="key-white key-c" key="C4"></button>
-            <button class="key-white key-c" key="D4"></button>
-            <button class="key-white key-c" key="E4"></button>
-            <button class="key-white key-c" key="F4"></button>
-            <button class="key-white key-c" key="G4"></button>
-            <button class="key-white key-c" key="A4"></button>
-            <button class="key-white key-c" key="B4"></button>
-            <button class="key-white key-c" key="C5"></button>
-            <button class="key-white key-c" key="D5"></button>
-            <button class="key-white key-c" key="E5"></button>
-            <button class="key-white key-c" key="F5"></button>
-            <button class="key-white key-c" key="G5"></button>
-            <button class="key-white key-c" key="A5"></button>
-            <button class="key-white key-c" key="B5"></button>
-            <button class="key-white key-c" key="C6"></button>
-            <button class="key-white key-c" key="D6"></button>
-            <button class="key-white key-c" key="E6"></button>
-            <button class="key-white key-c" key="F6"></button>
-            <button class="key-white key-c" key="G6"></button>
-            <button class="key-white key-c" key="A6"></button>
-            <button class="key-white key-c" key="B6"></button>
-            <button class="key-white key-c" key="C7"></button>
-            <button class="key-white key-c" key="D7"></button>
-            <button class="key-white key-c" key="E7"></button>
-            <button class="key-white key-c" key="F7"></button>
-            <button class="key-white key-c" key="G7"></button>
-            <button class="key-white key-c" key="A7"></button>
-            <button class="key-white key-c" key="B7"></button>
-            <button class="key-white"></button>
+            <button class="key-white" hz="27.5" index="0"></button>
+            <button class="key-white" hz="30.868" index="2"></button>
+            <button class="key-white key-c" key="C1" hz="32.703" index="3"></button>
+            <button class="key-white key-c" key="D1" hz="36.708" index="5"></button>
+            <button class="key-white key-c" key="E1" hz="41.203" index="7"></button>
+            <button class="key-white key-c" key="F1" hz="43.654" index="8"></button>
+            <button class="key-white key-c" key="G1" hz="48.999" index="10"></button>
+            <button class="key-white key-c" key="A1" hz="550" index="12"></button>
+            <button class="key-white key-c" key="B1" hz="61.735" index="14"></button>
+            <button class="key-white key-c" key="C2" hz="65.406" index="15"></button>
+            <button class="key-white key-c" key="D2" hz="73.416" index="17"></button>
+            <button class="key-white key-c" key="E2" hz="82.407" index="19"></button>
+            <button class="key-white key-c" key="F2" hz="87.307" index="20"></button>
+            <button class="key-white key-c" key="G2" hz="97.999" index="22"></button>
+            <button class="key-white key-c" key="A2" hz="110" index="24"></button>
+            <button class="key-white key-c" key="B2" hz="123.471" index="26"></button>
+            <button class="key-white key-c" key="C3" hz="130.813" index="27"></button>
+            <button class="key-white key-c" key="D3" hz="146.832" index="29"></button>
+            <button class="key-white key-c" key="E3" hz="164.814" index="31"></button>
+            <button class="key-white key-c" key="F3" hz="174.614" index="32"></button>
+            <button class="key-white key-c" key="G3" hz="195.998" index="34"></button>
+            <button class="key-white key-c" key="A3" hz="220" index="36"></button>
+            <button class="key-white key-c" key="B3" hz="246.942" index="38"></button>
+            <button class="key-white key-c" key="C4" hz="261.626" index="39"></button>
+            <button class="key-white key-c" key="D4" hz="293.665" index="41"></button>
+            <button class="key-white key-c" key="E4" hz="329.628" index="43"></button>
+            <button class="key-white key-c" key="F4" hz="349.228" index="44"></button>
+            <button class="key-white key-c" key="G4" hz="391.995" index="46"></button>
+            <button class="key-white key-c" key="A4" hz="440" index="48"></button>
+            <button class="key-white key-c" key="B4" hz="493.883" index="50"></button>
+            <button class="key-white key-c" key="C5" hz="523.251" index="51"></button>
+            <button class="key-white key-c" key="D5" hz="587.330" index="53"></button>
+            <button class="key-white key-c" key="E5" hz="659.255" index="54"></button>
+            <button class="key-white key-c" key="F5" hz="698.456" index="56"></button>
+            <button class="key-white key-c" key="G5" hz="783.991" index="58"></button>
+            <button class="key-white key-c" key="A5" hz="880" index="60"></button>
+            <button class="key-white key-c" key="B5" hz="987.767" index="62"></button>
+            <button class="key-white key-c" key="C6" hz="1046.502" index="63"></button>
+            <button class="key-white key-c" key="D6" hz="1174.659" index="65"></button>
+            <button class="key-white key-c" key="E6" hz="1318.510" index="67"></button>
+            <button class="key-white key-c" key="F6" hz="1396.913" index="68"></button>
+            <button class="key-white key-c" key="G6" hz="1567.982" index="70"></button>
+            <button class="key-white key-c" key="A6" hz="1760" index="72"></button>
+            <button class="key-white key-c" key="B6" hz="1975.533" index="74"></button>
+            <button class="key-white key-c" key="C7" hz="2093.005" index="75"></button>
+            <button class="key-white key-c" key="D7" hz="2349.318" index="77"></button>
+            <button class="key-white key-c" key="E7" hz="2637.020" index="79"></button>
+            <button class="key-white key-c" key="F7" hz="2793.826" index="80"></button>
+            <button class="key-white key-c" key="G7" hz="3135.963" index="82"></button>
+            <button class="key-white key-c" key="A7" hz="3520" index="84"></button>
+            <button class="key-white key-c" key="B7" hz="3951.066" index="86"></button>
+            <button class="key-white" key="C7" hz="4186.009" index="87"></button>
         </div>
         <div class="keys-black">
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="29.135" index="1"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="34.648" index="4"></button></div>
+            <div class="key-black"><button hz="38.891" index="6"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="46.249" index="9"></button></div>
+            <div class="key-black"><button hz="51.913" index="11"></button></div>
+            <div class="key-black"><button hz="58.270" index="13"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="59.296" index="16"></button></div>
+            <div class="key-black"><button hz="77.782" index="18"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="92.499" index="21"></button></div>
+            <div class="key-black"><button hz="97.999" index="23"></button></div>
+            <div class="key-black"><button hz="116.541" index="25"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="138.591" index="28"></button></div>
+            <div class="key-black"><button hz="155.563" index="30"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="184.997" index="33"></button></div>
+            <div class="key-black"><button hz="207.652" index="35"></button></div>
+            <div class="key-black"><button hz="233.082" index="37"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="277.183" index="40"></button></div>
+            <div class="key-black"><button hz="311.127" index="42"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="369.994" index="45"></button></div>
+            <div class="key-black"><button hz="415.305" index="47"></button></div>
+            <div class="key-black"><button hz="466.164" index="49"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="554.365" index="52"></button></div>
+            <div class="key-black"><button hz="622.254" index="54"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="739.989" index="57"></button></div>
+            <div class="key-black"><button hz="830.609" index="59"></button></div>
+            <div class="key-black"><button hz="932.328" index="61"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="1108.731" index="64"></button></div>
+            <div class="key-black"><button hz="1244.508" index="66"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="1479.978" index="69"></button></div>
+            <div class="key-black"><button hz="1661.219" index="71"></button></div>
+            <div class="key-black"><button hz="1864.655" index="73"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="2217.461" index="76"></button></div>
+            <div class="key-black"><button hz="2489.016" index="78"></button></div>
             <div class="key-black"></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
-            <div class="key-black"><button></button></div>
+            <div class="key-black"><button hz="2959.955" index="81"></button></div>
+            <div class="key-black"><button hz="3322.438" index="83"></button></div>
+            <div class="key-black"><button hz="3729.310" index="85"></button></div>
             <div class="key-black"></div>
         </div>
     </div>
-    <script type="text/javascript">
+    
+    <button style="position: fixed; right: 0;top: 0;" onclick="init()">初始化钢琴键盘</button>
+    <script type="text/javascript">        
+        window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
+        
+        if (!window.AudioContext) { 
+            alert('当前浏览器不支持Web Audio API');
+        }
+
+        //为每一个琴键创建Oscillator
+        var audioCtx = new AudioContext();
+        var oscillators = [];
+        $(".piano button").map((x)=> {
+            // 创建一个OscillatorNode, 它表示一个周期性波形（振荡），基本上来说创造了一个音调
+            var oscillator = audioCtx.createOscillator();
+            // 创建一个GainNode,它可以控制音频的总音量
+            var gainNode = audioCtx.createGain();
+            var index = $(x).attr("index"); 
+            var hz = $(x).attr("hz");
+            // 把音量，音调和终节点进行关联
+            oscillator.connect(gainNode);
+            // audioCtx.destination返回AudioDestinationNode对象，表示当前audio context中所有节点的最终节点，一般表示音频渲染设备
+            gainNode.connect(audioCtx.destination);
+            // 指定音调的类型，其他还有square|triangle|sawtooth
+            oscillator.type = 'sine';                
+            // 当前时间设置音量为0
+            gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+
+            oscillators.push({
+                index: index,
+                oscillator: oscillator,
+                gainNode: gainNode,
+                frequency: hz
+            })
+        })
+        console.log(oscillators)
+
+        function init(){
+            oscillators.map((x)=>{
+                x.oscillator.start(audioCtx.currentTime);
+            })
+            // 音调从当前时间开始播放，此时为静默播放（要手动触发开始）            
+        }
+
         function key(item, className) {
             setTimeout(function () {
                 if (item.isBlack) {
@@ -1119,7 +1160,6 @@
                     isBlack: false
                 }
             ],
-
             low: [
                 {
                     noteSimple: "1",
@@ -1235,11 +1275,8 @@
 
         $(function () {
             $(".icon").click(function () {
-                if (audio.currentTime > 0) {
-                    $(".audio-img").toggleClass("pause");
-                } else {
-                    $(".audio-img").toggleClass("playing");
-                }
+                $(".audio-img").toggleClass("pause");
+                $(".rotate-img").toggleClass("pause");
                 $(".waterfall").toggleClass("pause");
                 $(".audio-lyrics ul").toggleClass("pause");
                 $(".icon").toggleClass("play");
@@ -1262,35 +1299,9 @@
             audio.onended = function () {
                 audio.pause();
                 audio.currentTime = 0;
-                //$(".audio-img").attr("class", "audio-img");
                 $(".audio-img").removeClass("playing").removeClass("pause");
                 $(".icon").removeClass("play");
             }
-
-            $(".key-white").on("mousedown", function () {
-                $(this).addClass("green");
-                $(".key-white").on("mouseover", function () {
-                    $(this).addClass("green");
-                });
-            }).on("mouseup", function () {
-                $(this).removeClass("green");
-                $(".key-white").off("mouseover");
-            }).on("mouseout", function () {
-                $(this).removeClass("green");
-            });
-
-
-            $(".key-black button").on("mousedown", function () {
-                $(this).addClass("green");
-                $(".key-black button").on("mouseover", function () {
-                    $(this).addClass("green");
-                });
-            }).on("mouseup", function () {
-                $(this).removeClass("green");
-                $(".key-black button").off("mouseover");
-            }).on("mouseout", function () {
-                $(this).removeClass("green");
-            });
 
             $.each(note.high, function (i, item) {
                 var className = "green" + (item.isBlack ? " black" : "");
@@ -1310,30 +1321,61 @@
             });
             audio.addEventListener('canplaythrough', function (e) {
                 $(".waterfall").addClass("pause").css({ "animation-name": "fall", "animation-duration": "251.37s", "animation-timing-function": "linear" });
-                $(".icon").click();
+                //$(".icon").click();
             }, false);
 
             analys();
-        });
-    </script>
-    <script type="text/javascript">
-        /* *
-     * audio visualizer with html5 audio element
-     *
-     * v0.1.0
-     *
-     * licenced under the MIT license
-     *
-     * see my related repos:
-     * - HTML5_Audio_Visualizer https://github.com/wayou/HTML5_Audio_Visualizer
-     * - 3D_Audio_Spectrum_VIsualizer https://github.com/wayou/3D_Audio_Spectrum_VIsualizer
-     * - selected https://github.com/wayou/selected
-     * - MeowmeowPlayer https://github.com/wayou/MeowmeowPlayer
-     *
-     * reference: http://www.patrick-wied.at/blog/how-to-create-audio-visualizations-with-javascript-html
-     */
 
-        window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
+            //监听键盘
+            var body = $("body")[0];
+            //设置按键的下标
+            var keytemp = 0;
+            document.body.addEventListener("keydown", function(e){
+                //获取按键键盘编码
+                switch(e.keyCode){
+                    //空格
+                    case 32:
+                        break;
+                    default:
+                        var keyid = e.keyCode - 65;
+                        if(keyid>=0 && keyid<15){
+                            //保存按键下标
+                            keytemp = keyid;
+                            //按下效果
+                            //$("")                            
+                        }
+                        break;
+                }
+                //
+                //
+                //
+            })
+           
+
+            $(".piano button").on(['mousedown', 'mouseover'], function(){
+                var cuurentOscillator = oscillators[$(this).attr("index")];
+
+                // 设置当前播放声音的频率，也就是最终播放声音的调调
+                cuurentOscillator.oscillator.frequency.value = $(this).attr("hz");
+                // 音量为1
+                cuurentOscillator.gainNode.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 0.01);
+                
+                console.log("开始，发音结束");
+                $(this).addClass("green");
+                $(".piano button").on("mouseover", function () {
+                    $(this).addClass("green");
+                });
+            }).on(['mouseup', 'mouseout'], function(){
+                var cuurentOscillator = oscillators[$(this).attr("index")];                
+                // 音量为0
+                cuurentOscillator.gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1);
+                console.log("停止");
+                $(this).removeClass("green");
+                $(".piano button").off("mouseover");
+            }).on("mouseout", function () {
+                $(this).removeClass("green");
+            });
+        });
 
         function analys() {
             //var audio = document.getElementById('audio');
